@@ -13,6 +13,8 @@ namespace HelloWorld
 			// Clears the screen + Background Color is apoplied to entire Window
 			Console.Clear();
 			Console.WriteLine("Hello 2");
+			// Write without new line
+			Console.Write("Hello 3");
 		}
 	}
 }
