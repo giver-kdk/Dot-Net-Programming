@@ -18,6 +18,7 @@ namespace DataTypes
 			float a = 3.4f;					// Float stores 6+ digit precision
 			double b = 4.560956d;			// Double stores 14+ digit precision
 			decimal c = 5.4398534543m;		// Decimal stores 28+ digit precision
+			decimal d = 3.4398534543m;	
 
 			string name = "Giver";			// String stores string
 			char ch = 'a';					// Char stores single character
@@ -30,6 +31,9 @@ namespace DataTypes
 			var address = "Kathmandu";		// String
 			var age = 20;					// Integer
 			var isCorrect = true;			// Boolean
+
+			// Performing operation while displaying output
+			Console.WriteLine("c + d : {0}", c + d);
 
 			// Accessing maximum and minumum value stored by particular data type
 			Console.WriteLine("Max int: {0}", int.MaxValue);
