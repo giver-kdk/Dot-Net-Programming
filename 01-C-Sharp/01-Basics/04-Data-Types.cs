@@ -32,6 +32,12 @@ namespace DataTypes
 			var age = 20;					// Integer
 			var isCorrect = true;			// Boolean
 
+			// Prefixing any variable with 'const' makes it a constant
+			const bool earthIsRound = true;
+			const int SIZE = 10;
+			const float PI = 3.14;
+			const string planet = "Earth";
+
 			// Performing operation while displaying output
 			Console.WriteLine("c + d : {0}", c + d);
 
