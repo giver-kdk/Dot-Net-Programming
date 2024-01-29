@@ -13,6 +13,8 @@ namespace StringMethod
 			Console.WriteLine("String length: {0}", sentence.Length);
 			// Search substring in string. Just like 'includes' in JS
 			Console.WriteLine("String has 'Giver': {0}", sentence.Contains("Giver"));
+			// Find 1st encountered index of specified substring
+			Console.WriteLine("Index of 'Khadka' is: {0}", sentence.IndexOf("Khadka"));
 			// Concat multiple strings. It doesn't modify orginal string. So, we assigned it
 			sentence = String.Concat(sentence, ". I live in Nepal");
 			Console.WriteLine("Concatination: {0}", sentence);
