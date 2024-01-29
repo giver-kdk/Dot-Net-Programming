@@ -57,6 +57,26 @@ namespace StringMethod
 			// Avoiding escape characters using '@'
 			Console.WriteLine(@"Methods 2 Avoid Escape Character: \n and \t and \");
 
+
+			// Remove whitespace from front and back of string. It doesn't modify the original string
+			string greet = "          Hello World        ";
+			Console.WriteLine("Before Trimmed: {0}", greet);
+			Console.WriteLine("After Trimmed: {0}", greet.Trim());
+
+
+			// Convert Array to String. It also doesn't modify the original array
+			string[] countryArray = {"Nepal", "China", "India"};
+			string countries = String.Join(" and ", countryArray);
+			Console.WriteLine("Array joined to String: {0}", countries);
+			// Convert String to Array. It also doesn't modify the original string
+			// NOTE: 'Split()' arguments should be array of character, not string
+			// string[] newCountryArray = countries.Split(' ');
+			// NOTE: For 'Split()' argument to be array of string, use 'StringSplitOption.None'
+			string[] separator = {" and "};
+			string[] newCountryArray = countries.Split(separator, StringSplitOptions.None);
+			Console.WriteLine("String splitted to Array[0]: {0}", newCountryArray[0]);
+			Console.WriteLine("String splitted to Array[1]: {0}", newCountryArray[1]);
+			Console.WriteLine("String splitted to Array[2]: {0}", newCountryArray[2]);
 		}
 	}
 }
