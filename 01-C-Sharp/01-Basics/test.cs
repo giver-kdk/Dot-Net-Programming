@@ -12,9 +12,12 @@ namespace HelloWorld
         // Here, 'static' allows us to run method without creating object 
         static void Main(string[] args)
         {
-            // 'System' allows us to use 'Console' class
-            //System.Console.WriteLine("Hello World");
-            Console.WriteLine("Hello World");
+            object name = 2;
+			Console.WriteLine(name);
+
+			name = "Giver";
+			Console.WriteLine(name);
+
         }
     }
 }

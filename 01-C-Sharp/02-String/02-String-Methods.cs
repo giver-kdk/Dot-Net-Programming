@@ -18,6 +18,11 @@ namespace StringMethod
 			// Concat multiple strings. It doesn't modify orginal string. So, we assigned it
 			sentence = String.Concat(sentence, ". I live in Nepal");
 			Console.WriteLine("Concatination: {0}", sentence);
+
+			// Or, we can use '+' operator for string concatination
+			sentence = sentence + ". I am a student";
+			Console.WriteLine("Operator Concatination: {0}", sentence);
+
 			// Replaces all particular substrings with another
 			sentence = sentence.Replace("Nepal", "Kathmandu");
 			Console.WriteLine("Replacement: {0}", sentence);

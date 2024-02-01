@@ -28,14 +28,25 @@ namespace DataTypes
 			sbyte value2 = -120;			// SByte(Signed Byte) stores value between -128 to 127
 
 			// Implicit Decalaration: Data type automatically set by compiler 
+			// Once, data type is set by compiler, it can't be changed 
 			var address = "Kathmandu";		// String
+			// address = 8008.51;			// Not Allowed
 			var age = 20;					// Integer
 			var isCorrect = true;			// Boolean
+
+			// Data type automatically set by comipler 
+			// Data type can be changed even after compiler sets it
+			object galaxy = "Milkyway";		// String
+			Console.WriteLine("Object Value: {0}", galaxy);
+			galaxy = 2.0f;					// Float
+			Console.WriteLine("Object Value: {0}", galaxy);
+			galaxy = 4;						// Integer
+			Console.WriteLine("Object Value: {0}", galaxy);
 
 			// Prefixing any variable with 'const' makes it a constant
 			const bool earthIsRound = true;
 			const int SIZE = 10;
-			const float PI = 3.14;
+			const float PI = 3.14f;
 			const string planet = "Earth";
 
 			// Performing operation while displaying output
