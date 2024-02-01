@@ -51,6 +51,14 @@ namespace Methods
 
 			// Need to mention Class name if method belongs to other class
 			Car.GreetCustomer();
+
+
+			// Function inside function. This is supported in C# version >= 7
+			static void InnerFunction()
+			{
+				Console.WriteLine("I'm a child function!");
+			}
+			InnerFunction();
 		}
 	}
 }
