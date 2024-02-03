@@ -20,6 +20,10 @@ namespace MultipleParameters
 			Sum(1, 2, 3);
 			Sum(1, 2, 3, 4, 5);
 			Sum(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
+			// Normal array can also be passed in the function with 'params'
+			int[] numbers = {1, 2, 3, 4, 5}; 
+			Sum(numbers);
 		}
 	}
 }
