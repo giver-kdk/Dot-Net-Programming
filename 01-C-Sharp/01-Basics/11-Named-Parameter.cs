@@ -13,7 +13,7 @@ namespace CustomOrder
 			// Default order argument
 			PrintInfo("Giver", 21);
 
-			// Custom order argument
+			// Custom order argument aka Named Parameter
 			PrintInfo(age: 22, name: "Smith");
 			// PrintInfo(22, "Smith");		// This wont work
 		}
