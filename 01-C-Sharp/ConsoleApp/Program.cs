@@ -1,4 +1,4 @@
-/*
+﻿/*
 	- We know 'reference types' makes the original variable modified anyhow. 
 	- To modify original variable of 'value type', use 'ref' or 'out' keyword
 */
@@ -53,7 +53,7 @@ namespace PassRef
 
 
 			// Using 'out' parameter.
-			string result = Increment(out int n);       // Declaring 'out' parameter during function call
+			string result = Increment(out int n);		// Declaring 'out' parameter during function call
 			Console.WriteLine(result);
 			// NOTICE that we can access 'n' declared on 'Increment()' function call. 
 			// This function is the scope of 'n'
@@ -63,7 +63,7 @@ namespace PassRef
 			// Using 'ref readonly' parameter
 			int a = 3;
 			Console.WriteLine(PrintInfo(ref a));
-
+			
 
 			// Using 'in' parameter
 			int b = 3;
