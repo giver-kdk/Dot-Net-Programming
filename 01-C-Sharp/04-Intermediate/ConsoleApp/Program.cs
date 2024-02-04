@@ -19,7 +19,8 @@ namespace PassRef
 		public static string Increment(out int num)
 		{
 			num = 1;        // Needs to be initialized inside method
-			num++;
+			num++;			// This is like returning one thing
+			// This is like returning another thing
 			return String.Format("Increment is {0}", num);
 		}
 		// Using 'ref readonly'
