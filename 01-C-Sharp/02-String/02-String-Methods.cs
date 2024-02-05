@@ -85,11 +85,15 @@ namespace StringMethod
 			Console.WriteLine("String splitted to Array[1]: {0}", newCountryArray[1]);
 			Console.WriteLine("String splitted to Array[2]: {0}", newCountryArray[2]);
 
+			// Checks if string is empty
+			string emptyString = "";
+			if (emptyString == String.Empty) Console.WriteLine("Empty String");
+			else Console.WriteLine("Non Empty String");
 
 			// Check if string is empty or not using 'IsNullOrEmpty()'
-			string emptyString = "";
 			if(String.IsNullOrEmpty(emptyString)) Console.WriteLine("Empty");
 			else Console.WriteLine("Not Empty");
+
 		}
 	}
 }

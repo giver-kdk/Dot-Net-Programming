@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace DateTimeProgram
 {
@@ -108,7 +108,7 @@ namespace DateTimeProgram
 			// Subtracting DateTime gives TimeSpan
 			DateTime start = new DateTime(2020, 02, 18);
 			DateTime end = new DateTime(2020, 02, 25);
-			TimeSpan period = end - start;		
+			TimeSpan period = end - start;
 			Console.WriteLine("DateTime Difference: {0}", period);
 			// Comparing the DateTime instances
 			Console.WriteLine("Start End Equal: {0}", start == end);
@@ -117,9 +117,9 @@ namespace DateTimeProgram
 
 			// Instead of Adding Hrs, Mins, Sec individually.
 			// TimeSpan can also be added in DateTime. 'Add()' doesn't modify original
-			end = end.Add(period);			// Here, 'end' is DateTime
+			end = end.Add(period);          // Here, 'end' is DateTime
 			Console.WriteLine("Added TimeSpan: {0}", end);
-			end = end.Subtract(period);		// Here, 'period' is TimeSpan
+			end = end.Subtract(period);     // Here, 'period' is TimeSpan
 			Console.WriteLine("Subtracted TimeSpan: {0}", end);
 
 			// TimeSpan fields
