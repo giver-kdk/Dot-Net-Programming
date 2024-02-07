@@ -18,6 +18,13 @@ namespace Displayer
             breadth = 5.5;
             height = 5.5;
         }
+        // Parameterized Constructor (Some call it Default Constructor)
+        public Box(double length, double breadth, double height)
+        {
+            this.length = length;
+            this.breadth = breadth;
+            this.height = height;
+        }
         public void Display()
         {
             Console.WriteLine("Length: " + length + "\nBreadth: " + breadth + "\nHeight: " + height);
@@ -38,6 +45,9 @@ namespace Displayer
             // We are only allowed to create dynamic object using 'new' in C#
             // Dynamic object stored in Heap Memory
             Box b1 = new Box();
+            b1.Display();               // Prints default value
+            Console.WriteLine();
+
             b1.length = 10;
             b1.breadth = 10;
             b1.height = 10;
