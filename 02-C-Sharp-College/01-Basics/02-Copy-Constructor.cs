@@ -23,7 +23,7 @@ namespace CopyConstrcutor
 			sound = obj.sound;
 		}
 
-		public static void Main()
+		public static void Main(string[] args)
 		{
 			Animal dog = new Animal("Lucy", "Bhow");
 			Animal puppy = dog;

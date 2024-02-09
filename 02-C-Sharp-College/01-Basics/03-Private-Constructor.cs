@@ -17,7 +17,7 @@ namespace PrivateConstructor
 	}
 	public class Program
 	{
-		public static void Main()
+		public static void Main(string[] args)
 		{
 			//Animal dog = new Animal();			// This is not allowed due to private constructor
 
