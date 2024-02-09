@@ -22,8 +22,6 @@ namespace PrintArray
 			{
 				Console.WriteLine(info);
 			}
-
-			for(int i = 0; )
 		}
 	}
 }
