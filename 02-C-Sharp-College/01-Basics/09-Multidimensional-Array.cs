@@ -56,10 +56,12 @@ namespace ArrayStructure
         }
         public static void Main(string[] args)
         {
+            // 2D Array
             int[,] arr = new int[5, 4];
             InputArray(arr);
             PrintArray(arr);
 
+            // 3D Array
             int[,,] arr2 = new int[5, 4, 3];
             Input3D(arr2);
             Print3D(arr2);
