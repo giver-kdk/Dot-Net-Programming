@@ -11,6 +11,7 @@ namespace GetterSetter
 		{
 			return radius;
 		}
+		// 'Setter' Method used to set the value of variable
 		public void SetRadius(double r)
 		{
 			// We can also perform additional logic if needed 

@@ -6,7 +6,7 @@ namespace Properties
 	{
 		// We can't access private variable directly
 		// It's a good practice to use '_variable_name' for corresponding property 
-		public double _Radius;
+		private double _Radius;
 		// Using 'Getter' and 'Setter' method is not handy
 		// 'Property' helps to use these functionality but also allows us to use it like a variable
 		public double Radius
