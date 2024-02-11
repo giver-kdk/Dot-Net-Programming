@@ -4,7 +4,8 @@ using System.Reflection.Metadata.Ecma335;
 // When constructor overloading, we might need to redo the same thing in one constructor
 // that has already been done in another constructor
 
-// This repeatation can be avoided using 'Constructor Chaining'
+// This repeatation can be avoided using 'Constructor Chaining' with 'this()' keyword
+// 'this()' represents the constructoe function of current class
 namespace ConsoleApp
 {
 	public class Rectangle

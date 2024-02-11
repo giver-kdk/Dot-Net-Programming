@@ -9,6 +9,7 @@ namespace Properties
 		// If no logic required and only direct retrieval and assignment needed, then we can use property as:
 		// Here, we can assume 'Radius' as a variable itself
 		public double Radius { get; set; }
+		//public double Radius { get; set; } = 0		// Initialization
 		public class Program
 		{
 			public static void Main(string[] args)
