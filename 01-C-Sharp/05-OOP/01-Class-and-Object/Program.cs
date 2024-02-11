@@ -1,7 +1,9 @@
 ﻿using System;
 // Import 'namespace' for using its class from another program file
+// No need to import 'namespace' if anotehr program file has same namespace as this file.
+// i.e; 'ShapeMath.cs' and 'Program.cs'
 using AnimalNamespace;
-using ShapeNamespace;
+
 
 namespace ClassObject
 {

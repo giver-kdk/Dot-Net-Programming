@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ShapeNamespace
+namespace ClassObject
 {
 	public class ShapeMath
 	{

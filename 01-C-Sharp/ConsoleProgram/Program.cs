@@ -1,5 +1,4 @@
 ﻿using System;
-
 // Inner class is class inside another class
 // It is needed to make sure, inner class is accessed only via Outer class (But not inheritated)
 // This approach helps to write clean and maintainable code
@@ -7,6 +6,7 @@ namespace InnerClass
 {
 	public class OuterClass	
 	{
+	    Class1 obj1 = new Class1();
 		public int num1;
 		public static int setOuterCount = 0;
 		// We can directly create object from inner class in outer class. 
