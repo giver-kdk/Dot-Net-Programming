@@ -2,6 +2,12 @@ using System;
 
 namespace TypeCasting
 {
+	// 'Class' is also a type
+	public class MyClass
+	{
+		public string name;
+	}
+
 	public class Program
 	{
 		static void Main(string[] args)
@@ -17,6 +23,12 @@ namespace TypeCasting
 			double n3 = 10.53d;
 			int n4 = (int) n3;				// Double -> Int
 			Console.WriteLine(n4);
+
+			// Converting to custom Class type
+			object myObj1 = new MyClass();
+			MyClass myObj2 = (MyClass) myObj1;
+			myObj2.name = "Giver";
+			Console.WriteLine("Object to Class, Name: {0}", myObj2.name);
 
 			// Type Conversion Methods
 			// If the data-type values are in string, then we can convert as follows:

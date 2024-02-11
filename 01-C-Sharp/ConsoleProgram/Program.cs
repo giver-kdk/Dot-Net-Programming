@@ -1,72 +1,61 @@
 ﻿using System;
-// Inner class is class inside another class
-// It is needed to make sure, inner class is accessed only via Outer class (But not inheritated)
-// This approach helps to write clean and maintainable code
-namespace InnerClass
+
+namespace TypeCasting
 {
-	public class OuterClass	
+	// 'Class' is also a type
+	public class MyClass
 	{
-	    Class1 obj1 = new Class1();
-		public int num1;
-		public static int setOuterCount = 0;
-		// We can directly create object from inner class in outer class. 
-		// NOTE: We get infinite loop if both inner class and outer class refer to each other to create object. So, this is commented
-		//InnerClass innerObj = new InnerClass();
-
-		// Cannot directly access the inner class members
-		//innerObj.num2 = 3;
-
-		public int GetsetOuterCount()
-		{
-			return setOuterCount;
-		}
-		public class InnerClass
-		{
-			public int num2;
-			// We can directly create object from outer class in inner class
-			OuterClass outerObj = new OuterClass();
-			public InnerClass()
-			{
-				this.num2 = 0;
-			}
-			public InnerClass(int num)
-			{
-				this.num2 = num;
-			}
-			// Cannot directly access the outer class members
-			//outerObj.num1 = 2
-
-			public void SetOuter(int n)
-			{
-				// Access outer class members via methods
-				outerObj.num1 = n;	
-				// Accessing static member of outer class from inner class 
-				setOuterCount++;
-			}
-			public int GetOuter()
-			{
-				// Access outer class members via methods in 'Main()'.
-				return outerObj.num1;
-			}
-		}
+		public string name;
 	}
+
 	public class Program
 	{
-		public static void Main(string[] args)
+		static void Main(string[] args)
 		{
-			// We cannot directly access the inner class in 'Main()'
-			//InnerClass i1 = new InnerClass();
+			// Implicit Type Conversion: It is automatic and has no data loss
+			// Data type converts from: Small -> Large
+			int n1 = 5;
+			double n2 = n1;                 // Int -> Double
+			Console.WriteLine(n2);
 
-			// Accessing inner class via outer class	
-			OuterClass.InnerClass i1 = new OuterClass.InnerClass(5);
-			i1.SetOuter(10);
-			Console.WriteLine("Inner Number: {0}", i1.num2);
-			// Can't access	outer object inside inner object directly from 'Main()' as well
-			// Console.WriteLine(i1.outerObj.num1);
-			Console.WriteLine("Outer Number inside Inner Number: {0}", i1.GetOuter());
+			// Explicit Type Conversion: It is manual and has data loss
+			// Date type converts form: Large -> Small
+			double n3 = 10.53d;
+			int n4 = (int)n3;               // Double -> Int
+			Console.WriteLine(n4);
 
-			// Static member modified by inner class 
-			Console.WriteLine("Number of outer Objects: {0}", OuterClass.setOuterCount);
+			// Converting to custom Class type
+			object myObj1 = new MyClass();
+			MyClass myObj2 = (MyClass) myObj1;
+			myObj2.name = "Giver";
+			Console.WriteLine("Object to Class, Name: {0}", myObj2.name);
+
+			// Type Conversion Methods
+			// If the data-type values are in string, then we can convert as follows:
+			int n5 = int.Parse("100");
+			bool n6 = bool.Parse("true");
+			float n7 = float.Parse("4.2");
+			// Passing variable as argument
+			string value1 = "5.62";
+			double n8 = double.Parse(value1);
+			Console.WriteLine("String to Data Type");
+			Console.WriteLine(n5);
+			Console.WriteLine(n6);
+			Console.WriteLine(n7);
+			Console.WriteLine(n8);
+
+			// Other data-type to string
+			string value2 = n5.ToString();
+			string value3 = n6.ToString();
+			string value4 = n7.ToString();
+			Console.WriteLine("Data Type to String");
+			Console.WriteLine(value2);
+			Console.WriteLine(value3);
+			Console.WriteLine(value4);
+
+			// Accessing data type of variable
+			Console.WriteLine("'n1' variable is of data type: {0}", n1.GetType());
+			Console.WriteLine("'value2' variable is of data type: {0}", value2.GetType());
 		}
 	}
 }
