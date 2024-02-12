@@ -1,6 +1,7 @@
 using System;
 // 'is' operator is used to check if two types are same or not. Returns True if same, else False
-// 'as' operator is used to convert compatible data types. Returns converted type if compatible, else 'null'
+// 'as' operator is used to convert compatible data types(reference or nullable types).
+// 'as' operator returns converted type if compatible, else 'null'
 
 namespace IsAsOperator
 {
