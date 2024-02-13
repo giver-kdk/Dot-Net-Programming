@@ -1,61 +1,33 @@
-﻿using System;
+﻿// During method overriding, the parent class method simple gets Extended
+// And corresponsing method implementation runs based upon who is calling(parent or childs)
+// The overridden method still belongs to parent class (It stores the pointer to all the implementations)
 
-namespace TypeCasting
+// During method overriding, the parent class method gets hidden/invisible
+// And a new method implementation is defined in the child class
+// The new method will completely belong to child class (There won't be any relation with parent class method)
+using System;
+
+namespace MethodHiding
 {
-	// 'Class' is also a type
-	public class MyClass
-	{
-		public string name;
-	}
-
 	public class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
-			// Implicit Type Conversion: It is automatic and has no data loss
-			// Data type converts from: Small -> Large
-			int n1 = 5;
-			double n2 = n1;                 // Int -> Double
-			Console.WriteLine(n2);
+			Vehicle v1 = new Vehicle("Lambo");
+			v1.Greet();
+			v1.ShowInfo();
+			Console.WriteLine();
 
-			// Explicit Type Conversion: It is manual and has data loss
-			// Date type converts form: Large -> Small
-			double n3 = 10.53d;
-			int n4 = (int)n3;               // Double -> Int
-			Console.WriteLine(n4);
+			Car c1 = new Car("BMW", 4);
+			c1.ShowInfo();
+			Console.WriteLine();
 
-			// Converting to custom Class type
-			object myObj1 = new MyClass();
-			MyClass myObj2 = (MyClass) myObj1;
-			myObj2.name = "Giver";
-			Console.WriteLine("Object to Class, Name: {0}", myObj2.name);
-
-			// Type Conversion Methods
-			// If the data-type values are in string, then we can convert as follows:
-			int n5 = int.Parse("100");
-			bool n6 = bool.Parse("true");
-			float n7 = float.Parse("4.2");
-			// Passing variable as argument
-			string value1 = "5.62";
-			double n8 = double.Parse(value1);
-			Console.WriteLine("String to Data Type");
-			Console.WriteLine(n5);
-			Console.WriteLine(n6);
-			Console.WriteLine(n7);
-			Console.WriteLine(n8);
-
-			// Other data-type to string
-			string value2 = n5.ToString();
-			string value3 = n6.ToString();
-			string value4 = n7.ToString();
-			Console.WriteLine("Data Type to String");
-			Console.WriteLine(value2);
-			Console.WriteLine(value3);
-			Console.WriteLine(value4);
-
-			// Accessing data type of variable
-			Console.WriteLine("'n1' variable is of data type: {0}", n1.GetType());
-			Console.WriteLine("'value2' variable is of data type: {0}", value2.GetType());
+			// If we create base class object from child class constructor, then:
+			Vehicle v2 = new Car("Tesla", 4);
+			// Overriden methods are stored in Parent class. So, parent can access it
+			v2.Greet();					// Overriding calls child class method as expected
+			// New methods after Method Hiding are stored in Child class. So, parent can't access it
+			v2.ShowInfo();              // But, Method Hiding calls base class method
 		}
 	}
 }
