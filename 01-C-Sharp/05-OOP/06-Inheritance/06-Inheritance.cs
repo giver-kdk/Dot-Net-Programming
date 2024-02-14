@@ -22,7 +22,7 @@ namespace Inheritance
 			Console.WriteLine("Vehicle is running at speed: {0}", Speed);
 		}
 	}
-	// Inheritance
+	// 'Vehicle' becomes base class for 'Car'
 	public class Car : Vehicle
 	{
 		public int NumOfWheels { get; set; } = 0;
@@ -41,6 +41,22 @@ namespace Inheritance
 		public void StartCar()
 		{
 			Console.WriteLine("Car is running at speed: {0} with {1} wheel", Speed, NumOfWheels);
+		}
+	}
+
+	// 'Car' becomes base class for 'ElectricCar'. 'ElectricCar' has nothing to do with 'Vehicle' directly
+	public class ElectricCar : Car
+	{
+		public double BatteryLevel { get; set; } = 0;
+
+		public ElectricCar(string n, double p, double s, int w, double b) : base(n, p, s, w)
+		{
+			BatteryLevel = b;
+		}
+		public void StartCharging()
+		{
+			BatteryLevel++;
+			Console.WriteLine("Car is charging. Battery Level: {0}", BatteryLevel);
 		}
 	}
 	public class Program
@@ -63,6 +79,14 @@ namespace Inheritance
 			Console.WriteLine("Car Price: {0}", c2.Price);
 			Console.WriteLine("Car Speed: {0}", c2.Speed);
 			Console.WriteLine("Car Wheels: {0}", c2.NumOfWheels);
+
+			ElectricCar e1 = new ElectricCar("Tesla", 22000, 390, 4, 70);
+			Console.WriteLine("Electric Car Name: {0}", e1.Name);
+			Console.WriteLine("Electric Car Price: {0}", e1.Price);
+			Console.WriteLine("Electric Car Speed: {0}", e1.Speed);
+			Console.WriteLine("Electric Car Wheels: {0}", e1.NumOfWheels);
+			Console.WriteLine("Electric Car Battery: {0}", e1.BatteryLevel);
+			e1.StartCharging();
 		}
 	}
 }

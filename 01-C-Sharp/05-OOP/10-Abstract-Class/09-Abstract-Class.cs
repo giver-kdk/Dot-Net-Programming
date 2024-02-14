@@ -1,3 +1,4 @@
+// Abstract Methods are simply dynamic 'Polymorphism' 
 using System;
 
 namespace AbstractClass

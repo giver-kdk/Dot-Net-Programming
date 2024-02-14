@@ -18,6 +18,7 @@ namespace VirtualMethod
 			Console.WriteLine("Animal Sound is: {0}", Sound);
 		}
 	}
+	// 'Dog' overrides 'Animal's virtual method
 	public class Dog : Animal
 	{
 		public string Breed { get; set; }
@@ -26,11 +27,28 @@ namespace VirtualMethod
 		{
 			Breed = b;
 		}
-		// Overwriting virtual function of parent class
+		// Overwriting virtual function of parent class 'Animal'
 		public override void ProduceSound()
 		{
 			//base.ProduceSound();						// Runs base clas's virtual function if needed to avoid repition
 			Console.WriteLine("Dog Sound is: {0}", Sound);
+		}
+	}
+	// 'Puppy' overrides 'Dog's virtual method (i.e; Method overriden by 'Dog')
+	public class Puppy : Dog
+	{
+		public int Age { get; set; }
+
+		public Puppy(string n, string s, string b, int a) : base(n, s, b)
+		{
+			Age = a;
+		}
+
+		// Overwriding overridden function(becomes virtual for child) of parent class 'Dog'. 
+		public override void ProduceSound()
+		{
+			//base.ProduceSound();						// Runs base clas's virtual function if needed to avoid repition
+			Console.WriteLine("Puppy Sound is: {0}", Sound);
 		}
 	}
 	public class Program
@@ -42,6 +60,9 @@ namespace VirtualMethod
 
 			Dog d1 = new Dog("Lucy", "Bhow", "Husky");
 			d1.ProduceSound();
+
+			Puppy p1 = new Puppy("Bluty", "Wooh", "Labrador", 1);
+			p1.ProduceSound();
 		}
 	}
 }
