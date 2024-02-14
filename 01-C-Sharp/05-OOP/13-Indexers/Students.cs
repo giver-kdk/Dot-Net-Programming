@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Indexer are similar to Property but they use 'this[]' keyword instead of an indentifier 
+using System;
 
 namespace Indexer
 {
