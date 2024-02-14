@@ -1,33 +1,51 @@
-﻿// During method overriding, the parent class method simple gets Extended
-// And corresponsing method implementation runs based upon who is calling(parent or childs)
-// The overridden method still belongs to parent class (It stores the pointer to all the implementations)
+﻿using System;
 
-// During method overriding, the parent class method gets hidden/invisible
-// And a new method implementation is defined in the child class
-// The new method will completely belong to child class (There won't be any relation with parent class method)
-using System;
-
-namespace MethodHiding
+namespace Indexer
 {
 	public class Program
 	{
-		public static void Main(string[] args)
+		public static void Main(string[] args) 
 		{
-			Vehicle v1 = new Vehicle("Lambo");
-			v1.Greet();
-			v1.ShowInfo();
-			Console.WriteLine();
+			Students s1 = new Students();
+			// Set object's array member as if object is the array itself
+			s1[0] = "Ram";
+			s1[1] = "Shyam";
+			s1[2] = "Hari";
+			s1[3] = "Gopal";
+			s1[4] = "Hari";             // 'Hari' already exists. So, this becomes 'null'
 
-			Car c1 = new Car("BMW", 4);
-			c1.ShowInfo();
-			Console.WriteLine();
+			// Set students age
+			s1[0, true] = 19;
+			s1[1, true] = 21;
+			s1[2, true] = 20;
+			s1[3, true] = 22;
+			s1[4, true] = 18;
 
-			// If we create base class object from child class constructor, then:
-			Vehicle v2 = new Car("Tesla", 4);
-			// Overriden methods are stored in Parent class. So, parent can access it
-			v2.Greet();					// Overriding calls child class method as expected
-			// New methods after Method Hiding are stored in Child class. So, parent can't access it
-			v2.ShowInfo();              // But, Method Hiding calls base class method
+			// Set students roll number
+			s1[0, false] = 19;
+			s1[2, false] = 20;
+			s1[1, false] = 21;
+			s1[4, false] = 18;
+			s1[3, false] = 22;
+
+			// Get object's array members
+			Console.WriteLine("Students Names: ");	
+			foreach(string name in s1.names)
+			{
+				Console.WriteLine(name);	
+			}
+
+			Console.WriteLine("Students Age: ");	
+			foreach(int age in s1.ages)
+			{
+				Console.WriteLine(age);	
+			}
+
+			Console.WriteLine("Students Roll: ");	
+			foreach(int roll in s1.rolls)
+			{
+				Console.WriteLine(roll);	
+			}
 		}
 	}
 }

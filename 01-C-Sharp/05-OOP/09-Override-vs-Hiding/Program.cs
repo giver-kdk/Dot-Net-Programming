@@ -1,10 +1,10 @@
 ﻿// During method overriding, the parent class method simple gets Extended
 // And corresponsing method implementation runs based upon who is calling(parent or childs)
-// The overridden method still belongs to parent class (It stores the pointer to all the implementations)
+// The overridden methods still belongs to parent class (It stores the pointers to all the implementations)
 
 // During method overriding, the parent class method gets hidden/invisible
 // And a new method implementation is defined in the child class
-// The new method will completely belong to child class (There won't be any relation with parent class method)
+// The new method will belong to child class only (New method won't have any relation with parent class method)
 using System;
 
 namespace MethodHiding
