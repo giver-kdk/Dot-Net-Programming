@@ -1,4 +1,5 @@
-﻿// Indexer are similar to Property but they use 'this[]' keyword instead of an indentifier 
+﻿// Indexer are basically parameterized Property but they use 'this[]' keyword instead of an indentifier 
+// 'Indexer' is also known as 'Smart Array'
 using System;
 
 namespace Indexer
