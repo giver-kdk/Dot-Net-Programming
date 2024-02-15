@@ -1,9 +1,0 @@
-Day 2
-    Caption: Type Casting
-
-    Post: Code Snipprt + Data Types List Poster
-
-Day 3
-    Caption: 
-
-    Post:

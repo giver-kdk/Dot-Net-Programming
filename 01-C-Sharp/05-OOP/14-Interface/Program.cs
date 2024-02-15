@@ -3,6 +3,9 @@
 // To use 'Interface', class/struct should inherit the 'Interface'
 // All the 'Interface' methods/properties should compulsorily be implemented in child class/struct
 
+// NOTE: If multiple classes use same Interface, then all of them will have a common standard to communication with each other
+// So, basically, there becomes an Interface for all the classes to communicate
+
 namespace InterfaceApp
 {
 	public class Program
