@@ -43,7 +43,7 @@ namespace InheritanceWAP
             Console.WriteLine(p1.Name);         // Can access parent's members
             // Console.WriteLine(p1.Age);       // Can't access child's members
 
-            p1.Display();
+            p1.Display();                       // Can run the overridden method
         }
     }
 }
