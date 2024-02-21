@@ -1,4 +1,4 @@
-// This is dynamic binding in case of Polymorphism.
+// This is dynamic binding in case of Polymorphism. This is run-time binding.
 using System;
 
 namespace VirtualMethod

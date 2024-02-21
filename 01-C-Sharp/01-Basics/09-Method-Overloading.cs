@@ -1,4 +1,5 @@
 // Method Overloading is simply 'Polymorphism'. This is static binding in case of Polymorphism.
+// This is compile-time binding.
 // Methods with same name but different type or different number of parameters is Method Overloading
 using System;
 
