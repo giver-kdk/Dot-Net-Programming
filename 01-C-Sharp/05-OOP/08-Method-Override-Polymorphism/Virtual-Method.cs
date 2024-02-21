@@ -1,3 +1,4 @@
+// This is dynamic binding in case of Polymorphism.
 using System;
 
 namespace VirtualMethod

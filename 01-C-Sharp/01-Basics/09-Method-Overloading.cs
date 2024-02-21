@@ -1,4 +1,4 @@
-// Mehtod Overloading is simply 'Polymorphism'
+// Method Overloading is simply 'Polymorphism'. This is static binding in case of Polymorphism.
 // Methods with same name but different type or different number of parameters is Method Overloading
 using System;
 
