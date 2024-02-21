@@ -13,6 +13,10 @@ namespace InheritanceWAP
             Id = i;
             Name = n;
         }
+        public virtual void Display()
+        {
+            Console.WriteLine("I am Parent");
+        }
     }
     public class Child : Parent
     {
@@ -22,15 +26,24 @@ namespace InheritanceWAP
         {
             Age = a;
         }
+        public override void Display()
+        {
+            Console.WriteLine("I am Child");
+            Console.WriteLine("Age is: " + Age);
+        }
     }
     public class Program
     {
         public static void Main(string[] args)
         {
             // We can use parent reference variable to store child instance. But vice-versa is not true
-            Parent p1 = new Child(123, "Ram", 21);
+            Parent p1;
+            p1 = new Child(123, "Ram", 21);
+            Console.WriteLine(p1.Id);         // Can access parent's members
             Console.WriteLine(p1.Name);         // Can access parent's members
             // Console.WriteLine(p1.Age);       // Can't access child's members
+
+            p1.Display();
         }
     }
 }
