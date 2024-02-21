@@ -13,7 +13,8 @@ namespace VirtualMethod
 			Name = n;
 			Sound = s;
 		}
-		// Virtual Methods can be overwritten by child class Methods
+		// Virtual Methods can be overwritten by child class Methods with same Signature
+		// Method signature: name, type, number and sequence of parameters
 		public virtual void ProduceSound()
 		{
 			Console.WriteLine("Animal Sound is: {0}", Sound);
