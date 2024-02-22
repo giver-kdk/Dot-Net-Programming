@@ -10,6 +10,7 @@ namespace AbstractClass
 		public string Name { get; set; }
 		public double Speed { get; set; }
 
+		// Abstract can't be insatnciated but can have contructor for setting variables 
 		public Vehicle(string n, double s)
 		{
 			Name = n;

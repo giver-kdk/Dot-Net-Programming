@@ -1,5 +1,6 @@
 ﻿using System;
-// 'Interface' is a COMPLETE abstract class. It is like a contract that needs to be satisfied during inheritance.
+// 'Interface' is a COMPLETE abstract class which is a blueprint for class. 
+// It is like a contract/standard that needs to be satisfied during inheritance.
 // To use 'Interface', class/struct should inherit the 'Interface'
 // All the 'Interface' methods/properties should compulsorily be implemented in child class/struct
 
