@@ -39,7 +39,8 @@ namespace AbstractClass
 	{
 		public static void Main(string[] args)
 		{
-			// 'abstract' class cannot be instanciated. It is only supposed to be a base class
+			// 'abstract' class cannot be instanciated due to abscence of method implementation. 
+			// It is only supposed to be a base class
 			//Vehicle v1 = new Vehicle("Buggatti", 380);
 
 			Car c1 = new Car("Lamborgini", 400, 4);
