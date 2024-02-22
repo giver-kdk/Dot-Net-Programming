@@ -5,7 +5,7 @@ namespace AbstractClass
 {
 	// If a class is 'abstract' then it means, it is incomplete and 
 	// Some features needs to be implemented by child classes to be complete
-	public abstract class Vehicle
+	public abstract class Vehicle			// Class should be abstract if atleast one method is abstract
 	{
 		public string Name { get; set; }
 		public double Speed { get; set; }
