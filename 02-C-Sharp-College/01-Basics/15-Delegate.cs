@@ -8,8 +8,8 @@ namespace DelegateApp
     {
         // Delegate declaration with a signature
         public delegate void MyDelegate(string msg);
-
-        public static void MethodA(string message)         // This method can be pointed by our delegate
+        // This method can be pointed by our delegate
+        public static void MethodA(string message)        
         {
             Console.WriteLine(message);
         }
