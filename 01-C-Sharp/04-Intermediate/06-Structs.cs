@@ -5,6 +5,7 @@ using System;
 // 'struct' can also have fields, methods and constructors like 'class'
 // 'struct' is a value type, whereas 'class' is a reference type
 // 'struct' can't be inheritated
+// 'struct' can be placed both inside and outside of the class
 namespace StructsApp
 {
 	public class Program
