@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Data;
 
@@ -13,13 +13,13 @@ namespace DictionaryApp
 			// Here, '<string, string>' is <key_data_type, value_data_type>
 			Dictionary<string, string> family = new Dictionary<string, string>();
 
-			family.Add("father", "Ram KC");			// Add key value pair
+			family.Add("father", "Ram KC");         // Add key value pair
 			family.Add("mother", "Sita KC");
 			family.Add("son", "Gopal KC");
 
 			// Displaying 'Dictionary' key value pairs. Here also, <string, string> means key and value data types
 			// Here, 'KeyValue' is a struct type
-			foreach (KeyValuePair <string, string> member in family)
+			foreach (KeyValuePair<string, string> member in family)
 			{
 				Console.Write(member.Key + ": " + member.Value + "\n");
 			}
