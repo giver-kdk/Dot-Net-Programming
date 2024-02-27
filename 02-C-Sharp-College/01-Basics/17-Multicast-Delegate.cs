@@ -8,6 +8,7 @@ namespace DelegateApp
     {
         // Delegate declaration with a signature
         public delegate void MyDelegate(double p1, double p2);
+        public delegate double MyValueDelegate(double p1, double p2);
         // Method not returning anything
         public void PrintArea(double l, double b){
             Console.WriteLine(l * b);
