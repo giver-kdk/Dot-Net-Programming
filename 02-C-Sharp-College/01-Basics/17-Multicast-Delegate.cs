@@ -28,18 +28,23 @@ namespace DelegateApp
             // First, create an class's object to reference the method 
             Program p1 = new Program();
 
-            MyDelegate md2 = p1.PrintArea + p1.PrintPerimeter;              // Set multiple target methods. Order matters for execution.
-            md2(5, 2);                                                      // Calls both methods
-            md2 = md2 - p1.PrintArea;                                       // Detaches the pointer to function which is being subtracted
-            md2(6, 3);                                                      // Calls only one method
+            MyDelegate md1 = p1.PrintArea;              
+            MyDelegate md2 = p1.PrintPerimeter;         
+            MyDelegate md3 = md1 + md2;              // Set multiple target methods. Order matters for execution.
+
+            md3(5, 2);                                                      // Calls both methods
+            md3 = md3 - p1.PrintArea;                                       // Detaches the pointer to function which is being subtracted
+            md3(6, 3);                                                      // Calls only one method
 
             // PROBLEM: We can't simply get the returned value of multiple methods pointed by delegate
-            MyDelegate md3 = p1.GetArea + p1.GetPerimeter;              // Set multiple target methods that return some value
-            double result = md3(5, 2);                                  // Here, response of last method overrides 'result' value
+            MyDelegate md4 = p1.GetArea;              
+            MyDelegate md5 = p1.GetPerimeter;
+            MyDelegate md6 = md4 + md5;              // Set multiple target methods that return some value
+            double result = md6(5, 2);                                  // Here, response of last method overrides 'result' value
             Console.WriteLine("Result is: {0}", result);
 
             // SOLUTION: We can get the returnd value of multiple methods pointed by delegate by extracting it during invocations
-            foreach(var deleg in md3.GetInvocationList)
+            foreach(var deleg in md6.GetInvocationList)
             {
                 double res = deleg();
                 Console.WriteLine(res);
