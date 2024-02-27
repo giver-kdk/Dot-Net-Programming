@@ -1,57 +1,61 @@
 ﻿using System;
-using System.Collections;
-using System.Data;
+// Delegate pointing to multiple methods is called multilcast delegate
+// It is needed when we multiple methods have same signature and parameters
 
-namespace DictionaryApp
+namespace DelegateApp
 {
 	public class Program
 	{
+		// Delegate declaration with a signature
+		public delegate void MyDelegate(double p1, double p2);
+		public delegate double MyValueDelegate(double p1, double p2);
+		// Method not returning anything
+		public void PrintArea(double l, double b)
+		{
+			Console.WriteLine(l * b);
+		}
+		public void PrintPerimeter(double l, double b)
+		{
+			Console.WriteLine(2 * (l + b));
+		}
+
+		// Methods returning some value
+		public double GetArea(double l, double b)
+		{
+			return (l * b);
+		}
+		public double GetPerimeter(double l, double b)
+		{
+			return (2 * (l + b));
+		}
 		public static void Main(string[] args)
 		{
-			// 'Dictionary' is the 'key-value' pair data structure
-			// 'Dictionary' is named so because dictionaries show meaning of words(keys)
-			// Here, '<string, string>' is <key_data_type, value_data_type>
-			Dictionary<string, string> family = new Dictionary<string, string>();
+			// First, create an class's object to reference the method 
+			Program p1 = new Program();
 
-			family.Add("father", "Ram KC");			// Add key value pair
-			family.Add("mother", "Sita KC");
-			family.Add("son", "Gopal KC");
+			MyDelegate md1 = p1.PrintArea;
+			MyDelegate md2 = p1.PrintPerimeter;
+			MyDelegate? md3 = md1 + md2;              // Set multiple target methods. Order matters for execution.
 
-			// Displaying 'Dictionary' key value pairs. Here also, <string, string> means key and value data types
-			// Here, 'KeyValue' is a struct type
-			foreach (KeyValuePair <string, string> member in family)
-			{
-				Console.Write(member.Key + ": " + member.Value + "\n");
-			}
+			md3(5, 2);                                // Calls both methods
+			md3 = md3 - md1;						  // Detaches the pointer to function which is being subtracted
+			md3(6, 3);                                // Calls only one method
 			Console.WriteLine();
 
-			Console.WriteLine("Dictionary Length: {0}", family.Count);
-			// Check is there exists particular 'key' in the dictionary
-			Console.WriteLine("Dictionary contains 'father' key: {0}", family.ContainsKey("father"));
-			// Check is there exists particular 'value' in the dictionary
-			Console.WriteLine("Dictionary contains 'Gopal KC' value: {0}", family.ContainsValue("Gopal KC"));
-
-			// Removing Dictionary items using the 'key' 
-			family.Remove("son");
-			foreach (KeyValuePair<string, string> member in family)
-			{
-				Console.Write(member.Key + ": " + member.Value + "\n");
-			}
-
-			// Check if there exists value for particular key and store it if found
-			// 'TryGetValue' returns True and stores value in 'out' variable if 'value' found for 'key'
-			bool valueExists = family.TryGetValue("mother", out string? parsedValue);
-			Console.WriteLine("Value Exists: {0}", valueExists);
-			Console.WriteLine("Parsed Value: {0}", parsedValue);
+			// PROBLEM: We can't simply get the returned value of multiple methods pointed by delegate
+			MyValueDelegate md4 = p1.GetArea;
+			MyValueDelegate md5 = p1.GetPerimeter;
+			MyValueDelegate md6 = md4 + md5;              // Set multiple target methods that return some value
+			double result = md6(5, 2);                                  // Here, response of last method overrides 'result' value
+			Console.WriteLine("Result is: {0}", result);
 			Console.WriteLine();
 
-
-			// Deleting all key-value pairs of Dictionary
-			family.Clear();
-			Console.WriteLine("After Clearing Dictionary: ");
-			foreach (KeyValuePair<string, string> member in family)
-			{
-				Console.Write(member.Key + ": " + member.Value + "\n");
+			// SOLUTION: We can get the returnd value of multiple methods pointed by delegate by extracting it during invocations
+			Delegate[] delegates = md6.GetInvocationList();				// Get list of all delegated referencing to multiple methods 
+			foreach (Delegate deleg in delegates)						// Loop to access individual delegate
+			{	
+				double res = (double) deleg.DynamicInvoke(5, 2);		// Execute each delegate with 'DynamicInvoke()'
+				Console.WriteLine(res);									
 			}
 		}
 	}
