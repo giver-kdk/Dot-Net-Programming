@@ -25,20 +25,25 @@ namespace DelegateApp
         }
         public static void Main(string[] args)
         {
-            // First, create an object 
+            // First, create an class's object to reference the method 
             Program p1 = new Program();
 
-            // Method 1 ********************
-            // Set target method
-            MyDelegate md1 = new MyDelegate(p1.PrintArea);    // Pass method name in the delegate constructor
-            // 'md1' is now a delegate instance. 'md' is now alias for 'MethodA'
-            // Invoke the delegate
-            md1.Invoke("Hello World");                   // Pass parameter in 'Invoke()'
+            MyDelegate md2 = p1.PrintArea + p1.PrintPerimeter;              // Set multiple target methods. Order matters for execution.
+            md2(5, 2);                                                      // Calls both methods
+            md2 = md2 - p1.PrintArea;                                       // Detaches the pointer to function which is being subtracted
+            md2(6, 3);                                                      // Calls only one method
 
+            // PROBLEM: We can't simply get the returned value of multiple methods pointed by delegate
+            MyDelegate md3 = p1.GetArea + p1.GetPerimeter;              // Set multiple target methods that return some value
+            double result = md3(5, 2);                                  // Here, response of last method overrides 'result' value
+            Console.WriteLine("Result is: {0}", result);
 
-            // Method 2 ********************
-            MyDelegate md2 = p1.MethodA;                    // Another way to set target method
-            md2("Hello World");                          // Another way to invoke delegate
+            // SOLUTION: We can get the returnd value of multiple methods pointed by delegate by extracting it during invocations
+            foreach(var deleg in md3.GetInvocationList)
+            {
+                double res = deleg();
+                Console.WriteLine(res);
+            } 
         }
     }
 }
