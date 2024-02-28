@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace GenercStructApp
@@ -12,10 +12,10 @@ namespace GenercStructApp
 			public T l;
 			public T b;
 			// Using the unknown type 'T' specified in the struct 
-			public void ShowArea() 
+			public void ShowArea()
 			{
 				// double length = (double) l;					// This type casting is not compatible
-				double length = Convert.ToDouble(l);			// Converting 'T' to 'double'
+				double length = Convert.ToDouble(l);            // Converting 'T' to 'double'
 				double breadth = Convert.ToDouble(b);
 				//Console.WriteLine($"Area is {l * b}");		// Can't perform operation on unknown data types 
 				Console.WriteLine($"Area is {length * breadth}");
@@ -26,7 +26,7 @@ namespace GenercStructApp
 			Shape<int> rect = new Shape<int>();
 			rect.l = 5;
 			rect.b = 4;
-			
+
 			rect.ShowArea();
 
 
