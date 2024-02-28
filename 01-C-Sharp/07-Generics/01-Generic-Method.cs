@@ -2,6 +2,8 @@
 // It allows us to create methods whose parameter type is unknown
 // Boxing: Convert Primitive type to Object Type
 // Unboxing: Convert Object type to Primitive Type
+
+// NOTE: In C#, we can create generic interfaces, classes, structs, methods, events, and delegates.
 using System;
 
 namespace GenericsApp
