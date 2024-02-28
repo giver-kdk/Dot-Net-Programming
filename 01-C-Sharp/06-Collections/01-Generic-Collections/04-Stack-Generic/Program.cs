@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 // Generic Stack is same as Non-Generic Stack except it is type safe and accidental type mismatch is prevented
 
