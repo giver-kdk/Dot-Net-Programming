@@ -14,7 +14,7 @@ namespace ArrayListProgram
 			ArrayList aList1 = new ArrayList();
 			// We can add elements just like Push() in C++
 			aList1.Add("Ram");
-			aList1.Add(21);             // Different data types is allowed
+			aList1.Add(21);             // Different data types is allowed in 'ArrayList'(This is not allowed in case of 'List')
 
 			foreach (object obj in aList1)
 			{
@@ -45,7 +45,7 @@ namespace ArrayListProgram
 			ArrayList aList3 = new ArrayList();
 			aList3.Add("Giver");                        // String
 			aList3.Add("Ram");                          // String
-			aList3.Add("Alex");                         // String
+			aList3.Add("Hari");                         // String
 			aList3.Sort();                              // Sorts elements(Data types of elements should be same)
 			foreach (object obj in aList3)
 			{

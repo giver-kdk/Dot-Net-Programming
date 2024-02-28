@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 // 'List' is located in 'Generic' namespace
 using System.Collections.Generic;
 // 'List' is similar to 'ArrayList' but it is more Type Safe
@@ -29,8 +29,8 @@ namespace ListApp
 			//people.Add(123);				// This is not allowed cause we created 'List' of type 'string'
 
 			people.Insert(1, "Gopal");      // Insert element at specific index
-			string[] group = { "Alex", "John", "Smith"};
-			people.InsertRange(1, group);	// Insert multiple elements at specific index
+			string[] group = { "Alex", "John", "Smith" };
+			people.InsertRange(1, group);   // Insert multiple elements at specific index
 
 			people.RemoveAt(2);             // Deleting element at specific index from List
 
@@ -43,9 +43,9 @@ namespace ListApp
 			people.Sort();
 			Console.WriteLine("Sorted List:");
 			// List Traversal same as Array Traversal
-			foreach(string str in people)
+			foreach (string str in people)
 			{
-				Console.WriteLine(str);	
+				Console.WriteLine(str);
 			}
 			Console.WriteLine();
 
@@ -62,11 +62,11 @@ namespace ListApp
 
 			// List of 'Class' type. This stores array of 'Student' objects
 			List<Student> s1 = new List<Student>();
-			s1.Add(new Student { Name = "Ram", Age = 21});
-			s1.Add(new Student { Name = "Shyam", Age = 19});
-			s1.Add(new Student { Name = "Hari", Age = 22});
+			s1.Add(new Student { Name = "Ram", Age = 21 });
+			s1.Add(new Student { Name = "Shyam", Age = 19 });
+			s1.Add(new Student { Name = "Hari", Age = 22 });
 
-			foreach(Student s in s1)
+			foreach (Student s in s1)
 			{
 				s.ShowInfo();
 			}
