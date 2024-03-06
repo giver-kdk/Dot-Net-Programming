@@ -8,7 +8,8 @@ namespace GenericsExampleApp
         // Normal Method that uses 'T' data type provided by class
         public void Sum(T x, T y)
         {
-            dynamic a = x;
+            // 'var' type is set at compile time and we don't know the type at cimpile time. So, we use 'dynamic' 
+            dynamic a = x;                          // 'dynamic' type variable's type is set at run-time (Not at compile time)
             dynamic b = y;
             // Console.WriteLine(x + y);           // We can't directly perform operation of unknown types
             Console.WriteLine($"Sum is: {a + b}");

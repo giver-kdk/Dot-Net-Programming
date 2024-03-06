@@ -9,7 +9,7 @@ namespace ExceptionHandle
 			try
 			{
 				// 'DivideByZeroException()' is a Class. So, use 'new'
-				if(b == 0) throw new System.DivideByZeroException();
+				if(b == 0) throw new DivideByZeroException();
 				else Console.WriteLine("Division is: {0}", a/b);
 			}
 			// Only one 'catch' runs among these
