@@ -26,17 +26,17 @@ namespace EventApp
             // Invoke the event's subscriber method if the subscriber exists
             ProcessCompleted?.Invoke();
         }
+        // Subscriber: Actual Event Handler
+        private static void p1_ProcessCompleted()
+        {
+            Console.WriteLine("Process Completed!");
+        }
         public static void Main(string[] args)
         {
             Process p1 = new Process();
             // Attach subscriber method to the event. If this not done, then event wil have null subscriber
             p1.ProcessCompleted += p1_ProcessCompleted;
             p1.StartProcess();
-        }
-        // Subscriber: Actual Event Handler
-        private static void p1_ProcessCompleted()
-        {
-            Console.WriteLine("Process Completed!");
         }
     }
 }
