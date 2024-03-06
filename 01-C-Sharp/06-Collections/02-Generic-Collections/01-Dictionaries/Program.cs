@@ -1,6 +1,5 @@
 using System;
-using System.Collections;
-using System.Data;
+using System.Collections.Generic;
 // 'Dictionary' is conceptually same as 'Hashtable' but it is Generic. So, there is type safety and prevents accidental type mismatch
 
 namespace DictionaryApp
@@ -28,7 +27,7 @@ namespace DictionaryApp
 
 			Console.WriteLine("Dictionary Length: {0}", family.Count);
 			// Accessing value from key
-			Console.WriteLine($"Father is: {family["father"]}");			
+			Console.WriteLine($"Father is: {family["father"]}");
 			// Check is there exists particular 'key' in the dictionary
 			Console.WriteLine("Dictionary contains 'father' key: {0}", family.ContainsKey("father"));
 			// Check is there exists particular 'value' in the dictionary
