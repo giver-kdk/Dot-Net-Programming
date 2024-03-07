@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace LinkedListProgram
@@ -11,13 +11,13 @@ namespace LinkedListProgram
 			{
 				Console.Write(elem + "\t");
 			}
-			Console.WriteLine();	
+			Console.WriteLine();
 		}
 		public static void Main(string[] args)
 		{
 			LinkedList<int> l1 = new LinkedList<int>();
-			l1.AddLast(1);		
-			l1.AddLast(2);		
+			l1.AddLast(1);
+			l1.AddLast(2);
 			l1.AddLast(3);
 
 			Console.WriteLine("Adding from Last: ");
@@ -58,7 +58,7 @@ namespace LinkedListProgram
 			Display(l1);
 
 			current = l1.First;
-			l1.Remove(l1.First);			// Same 'Remove()' method deletes node as well
+			l1.Remove(l1.First);            // Same 'Remove()' method deletes node as well
 			Console.WriteLine("Deleting First Node with Pointer: ");
 			Display(l1);
 
@@ -71,7 +71,7 @@ namespace LinkedListProgram
 			Console.WriteLine("Deleting Last Node Directly: ");
 			Display(l1);
 
-			l1.Remove(l1.Last);            
+			l1.Remove(l1.Last);
 			Console.WriteLine("Deleting Last Node with Pointer: ");
 			Display(l1);
 		}
