@@ -1,10 +1,11 @@
 ﻿using System;
+using System.IO;                    // 'File' class is located here
 
 namespace ImageCopyProgram
 {
 	public class Program
 	{
-		public static void Main(string[] args)	
+		public static void Main(string[] args)
 		{
 			// File path of source file
 			string srcFilePath = @"D:\CODES\Dot-Net-Development\01-C-Sharp\ConsoleProgram\Sky.jpg";
@@ -13,7 +14,7 @@ namespace ImageCopyProgram
 
 			// 'Copy(Source, Destination, Overwrite)'
 			File.Copy(srcFilePath, destFilePath, true);         // Default for overwrite is 'false'
-			// NOTE: Setting overrwrite to 'false' only supports copy pasting the file
+																// NOTE: Setting overrwrite to 'false' only supports copy pasting the file
 		}
 	}
 }
