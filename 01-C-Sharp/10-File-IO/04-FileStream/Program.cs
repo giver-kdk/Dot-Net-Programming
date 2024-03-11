@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;                    // 'FileInfo' class located here
 using System.Text;                  // 'Encoding' class located here
 
