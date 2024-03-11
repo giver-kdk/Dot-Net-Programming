@@ -1,48 +1,46 @@
 ﻿using System;
 using System.IO;                    // 'FileInfo' class located here
-using System.Text;                  // 'Encoding' class located here
-
-// FileStream is used for working with specific part of the file
-// The part of file is represented by 'byte' array
+// NOTE: ***********	Run Visual Studio IDE as Administration to get access permission	***********
+// Directory is a static class used for working with Directory
+// We can't instantiate from this static class 
 namespace FileStreamApp
 {
 	public class Program
 	{
 		public static void Main(string[] args)
 		{
-			// WRITE FileStream: String -> Byte Array -> Write
-			string myFile = @"C:\Users\DELL\Documents\TestFolder\test2.txt";
-			// 'FileMode' allows us to open, create, append as per situation
-			// 'FileMode.Create' creates file if it doesn't exist
-			FileStream fs = new FileStream(myFile, FileMode.Create);
+			string sourceDir = @"C:\Users\DELL\Documents\TestFolder1";
+			string sourceFile = @"C:\Users\DELL\Documents\TestFolder1\SourceFile.txt";
+			string destDir = @"C:\Users\DELL\Documents\TestFolder2";
 
-			// Writing stream in file requires us to convert string into byte array
-			string data = "Hello I am a text";
-			// Using system's default character encoding method, convert string to bytes
-			byte[] dataBytes = Encoding.Default.GetBytes(data);
-			// Here, In 'FileStream.Write(data, index, count)', 'count' is the max number of bytes to write
-			fs.Write(dataBytes, 0, dataBytes.Length);
-
-
-
-
-
-			// Reset cursor after writing
-			fs.Position = 0;
-
-			// READ FileStream: Read -> Byte Array -> String
-			// Read the byte array and convert to string
-			List<byte> resultBytes = new List<byte>();                  // Making resizable byte array
-			for (int i = 0; i < dataBytes.Length; i++)
-			{
-				resultBytes.Add((byte)fs.ReadByte());
+			if(! Directory.Exists(sourceDir))                                   // Returns 'true' if directory exists else 'false'
+			{	
+				Directory.CreateDirectory(sourceDir);							// Creating 1st Directory
 			}
-			// 'GetSting()' takes array of 'byte'. So convert from list to array
-			string resString = Encoding.Default.GetString((resultBytes.ToArray()));
-			Console.WriteLine(resString);
 
-			// Close stream after use
-			fs.Close();
+			FileStream fs = new FileStream(sourceFile, FileMode.Create);		// Create a file using FileStream
+			fs.Close();															// Close the stream to free the file
+			
+			try{
+				// Moves content of source directory to destination direcotry and deletes source directory
+				Directory.Move(sourceDir, destDir);								// Might not have access to move file
+				Console.WriteLine("File Content Moved...");
+			}
+			catch(Exception err)
+			{
+				Console.WriteLine("Can't Move File Content...");
+				Console.WriteLine(err.Message);
+			}
+
+			// 'Directory.EnumerateDirectories()' returns collection of all the directories inside
+			foreach(string path in Directory.EnumerateDirectories(@"C:\Users\DELL\Documents"))
+			{
+				Console.WriteLine(path);
+			}
+
+			// In 'Directory.Delete(path, recursive)', setting 'recursive' to 'true' deletes all nested files as well
+			Console.ReadLine();												// Hold program for a while
+			Directory.Delete(destDir, true);								// Delete the directory and it's content
 		}
 	}
 }
