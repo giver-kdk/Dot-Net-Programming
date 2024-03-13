@@ -1,0 +1,45 @@
+1. Write a C# program to demonstrate five types of constructor in C#.
+2. WAP in C# to demonstrate concept of auto Property and Read-Only Property.
+3. WAP in C# to demonstrate jagged array.
+4. WAP to demonstrate Indexer in C#:
+	a) When index is of int type
+	b) When index is of other than int type.
+5. WAP to demonstrate:
+	a) The use of base keyword to access base class fields
+	b) The use of base keyword to call base class methods
+	c) The use of base keyword to call base class constructor
+6. Program to show
+	a) method overriding and method hiding/shadowing in C#
+	b) dynamic polymorphism using method overriding.
+7. WAP to illustrate the concept of
+	a) Abstract class
+	b) Interface
+	c) Multiple inheritance using interface in C#
+8. WAP program that contains:
+	a) Structure (struct)
+	b) Enumeration (enum)
+	c) Partial class
+9. WAP to illustrate the concept of:
+	a) Delegate
+	b) Multicast delegate
+	c) Func Delegate
+	d) Action Delegate
+	e) Anonymous Method
+	f) Event in C#.
+10. WAP which use any
+	a) Non generic collection
+	b) Generic Collection
+11. Program to demonstrate the use of Generic Class with Generic field and method.
+12. WAP to take input from keyboard and write them to a file
+13. WAP to demonstrate the concept of LINQ
+14. WAP to
+	a) demonstrate Lamda Expressions in C#.
+	b) LINQ with Lamda Expression in C#
+15. WAP to
+	a) demonstrate exception handling in C# using try, catch and finally blocks.
+	b) deal with throw keyword in exception handling
+	c) demonstrate custom exception handling
+16. WAP
+	a) to use built-in attributes in C#.
+	b) to create and use custom attribute in C#.
+17. WAP to demonstrate asynchronous programming in C# using async and await keywords.
