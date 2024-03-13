@@ -2,6 +2,7 @@ using System;
 
 namespace LambdaDelegate
 {
+	public delegate double MyDelegate(double value);
 	public class Program
 	{
 		public static void Main(string[] args)

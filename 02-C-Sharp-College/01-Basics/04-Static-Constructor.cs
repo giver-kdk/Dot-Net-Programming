@@ -8,7 +8,7 @@ namespace StaticCOnstructor
 		public static int count;
 
 		// Static Constructor automatically runs even before the 'Main()' function 
-		// It runs only once to initialize the class
+		// It runs only once to initialize the class's static fields
 		// There is no access modifier or parameters in static constructor
 		static Animal()
 		{

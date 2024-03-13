@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 // C# provides built-in delegates: Func, Action and Predicate
 // We don't have to create custom delegate everytime if we use these
@@ -10,15 +10,15 @@ namespace FuncDelegate
 	public class Program
 	{
 		public static int add(int a, int b)
-		{  return a + b; }
+		{ return a + b; }
 		public static void multiply(int a, int b)
-		{  Console.WriteLine("Product: " + a * b); }
+		{ Console.WriteLine("Product: " + a * b); }
 		public static bool checkPalindrome(string str)
 		{
-			char[] chars = str.ToCharArray();		// String to Array
-			Array.Reverse(chars);					// Reverse the Array
-			string rev = new string(chars);			// Array to String
-			return str == rev;						// String Comaprison
+			char[] chars = str.ToCharArray();       // String to Array
+			Array.Reverse(chars);                   // Reverse the Array
+			string rev = new string(chars);         // Array to String
+			return str == rev;                      // String Comaprison
 		}
 		public static void Main(string[] args)
 		{
