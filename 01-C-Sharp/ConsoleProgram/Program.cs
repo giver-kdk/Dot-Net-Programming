@@ -1,36 +1,26 @@
 ﻿using System;
 
-// C# provides built-in delegates: Func, Action and Predicate
-// We don't have to create custom delegate everytime if we use these
-
-namespace FuncDelegate
+namespace LambdaDelegate
 {
-	// Action Delegate is used to create delegate doesn't return anything
-	// Predicate Delegate is used to create delegate that takes one parameter and returns boolean
+	public delegate int MyDelegate(int value);          // Delegate
 	public class Program
 	{
-		public static int add(int a, int b)
-		{  return a + b; }
-		public static void multiply(int a, int b)
-		{  Console.WriteLine("Product: " + a * b); }
-		public static bool checkPalindrome(string str)
-		{
-			char[] chars = str.ToCharArray();		// String to Array
-			Array.Reverse(chars);					// Reverse the Array
-			string rev = new string(chars);			// Array to String
-			return str == rev;						// String Comaprison
-		}
 		public static void Main(string[] args)
 		{
-			// Func Delegate is used to create delegate that returns something
-			Func<int, int, int> sum = add;
-			Action<int, int> product = multiply;
-			Predicate<string> isPalindrome = checkPalindrome;
+			// Statement Lambda allows to write multiple statements
+			MyDelegate md2 = (x) =>
+			{
+				Console.Write("Square Value is: ");
+				return x * x;
+			};
+			int square = md2(5);
+			Console.WriteLine(square);
 
-			int result = sum(4, 5);
-			Console.WriteLine("Sum: " + result);
-			product(4, 5);
-			Console.WriteLine(isPalindrome("noon"));
+			// Expression Lambda allows to returns result in one line without 'return' keyword
+			MyDelegate md = x => x * x;
+
+			square = md(10);
+			Console.WriteLine(square);
 		}
 	}
 }
