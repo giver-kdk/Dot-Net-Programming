@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;                  // Location of LINQ
-									// LINQ(Language Integrated Query) allows data access of all data types
+// LINQ(Language Integrated Query) allows data access of all data types
 /*
     LINQ Types:     
         - LINQ to Object                    // Belongs to Language
