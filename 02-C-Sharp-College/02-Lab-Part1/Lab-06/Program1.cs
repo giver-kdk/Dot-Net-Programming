@@ -47,6 +47,10 @@ namespace HidingandOverriding
 			c1.Greet();                     // Overriden Method
 			c1.ShowInfo();                  // New Method
 			Console.WriteLine();
+
+			Console.WriteLine("Lab No: 6a");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

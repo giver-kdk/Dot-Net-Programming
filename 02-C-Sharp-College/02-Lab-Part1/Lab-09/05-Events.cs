@@ -30,7 +30,10 @@ namespace EventApp
 
 			Console.Write("Enter a name: ");
 			string input = Console.ReadLine();
-			p1.SetName(input);                  
+			p1.SetName(input);
+			Console.WriteLine("Lab No: 9e");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

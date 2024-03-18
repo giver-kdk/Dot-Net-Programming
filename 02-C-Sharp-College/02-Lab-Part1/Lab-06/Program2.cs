@@ -38,6 +38,9 @@ namespace DynamicPolymorphism
 			s1.Draw();
 			c1.Draw();
 			r1.Draw();
+			Console.WriteLine("Lab No: 6b");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

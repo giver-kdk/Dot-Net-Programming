@@ -14,6 +14,9 @@ namespace LambdaWhere
 			{
 				Console.WriteLine(i);
 			}
+			Console.WriteLine("Lab No: 14b");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

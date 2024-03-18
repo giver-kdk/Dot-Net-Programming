@@ -39,6 +39,9 @@ namespace CustomExceptionApp
 
 			CheckAge(age1);
 			CheckAge(age2);
+			Console.WriteLine("Lab No: 15");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

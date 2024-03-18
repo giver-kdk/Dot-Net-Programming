@@ -25,6 +25,9 @@ namespace ListApp
 			{
 				Console.WriteLine(str);
 			}
+			Console.WriteLine("Lab No: 10b");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

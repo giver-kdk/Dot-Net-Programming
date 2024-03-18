@@ -27,6 +27,9 @@ namespace PropertyApp
 
 			Console.WriteLine(s1.Name);
 			Console.WriteLine(s1.Count);
+			Console.WriteLine("Lab No: 2");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

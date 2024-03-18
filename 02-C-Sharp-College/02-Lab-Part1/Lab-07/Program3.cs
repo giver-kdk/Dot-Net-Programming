@@ -40,6 +40,9 @@ namespace InterfaceApp
 			c1.Greet();
 			c1.Start();
 			c1.Stop();
+			Console.WriteLine("Lab No: 7c");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

@@ -33,6 +33,9 @@ namespace AttributeApp
 			{
 				Console.WriteLine(a);
 			}
+			Console.WriteLine("Lab No: 16");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

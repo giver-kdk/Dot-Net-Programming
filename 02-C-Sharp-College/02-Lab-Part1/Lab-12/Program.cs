@@ -16,6 +16,9 @@ namespace FileApp
 
 			// Read file line by line
 			Console.WriteLine(File.ReadAllText(fileName));
+			Console.WriteLine("Lab No: 12");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

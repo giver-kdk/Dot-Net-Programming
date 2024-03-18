@@ -33,6 +33,9 @@ namespace AbstractClass
 		{
 			Car c1 = new Car("Lamborgini", 400, 4);
 			c1.ShowInfo();
+			Console.WriteLine("Lab No: 7a");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

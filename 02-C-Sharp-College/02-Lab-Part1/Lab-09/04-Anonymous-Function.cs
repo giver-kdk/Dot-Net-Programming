@@ -12,6 +12,9 @@ namespace AnonymousFunction
 				return a + b;
 			};
 			Console.WriteLine(md1(5.5, 10.5));
+			Console.WriteLine("Lab No: 9d");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

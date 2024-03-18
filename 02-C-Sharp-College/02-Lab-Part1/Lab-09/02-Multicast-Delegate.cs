@@ -26,6 +26,9 @@ namespace MulticastDelegate
 			md3 = md3 - md1;
 			md3(6, 3);                                // Calls only one method
 			Console.WriteLine();
+			Console.WriteLine("Lab No: 9b");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

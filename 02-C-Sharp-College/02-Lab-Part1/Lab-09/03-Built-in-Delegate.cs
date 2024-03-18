@@ -25,6 +25,10 @@ namespace FuncDelegate
 			Console.WriteLine("Sum: " + result);
 			product(4, 5);
 			Console.WriteLine(isPalindrome("noon"));
+
+			Console.WriteLine("Lab No: 9c");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

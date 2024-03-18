@@ -42,6 +42,9 @@ namespace BaseKeyword
 		{
 			Car c1 = new Car("Lamborgini", 280, 4);
 			c1.ShowInfo();
+			Console.WriteLine("Lab No: 5");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

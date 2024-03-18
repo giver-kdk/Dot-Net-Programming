@@ -25,6 +25,9 @@ namespace InterfaceApp
 			Car c1 = new Car();
 			c1.ShowInfo();
 			c1.Greet();
+			Console.WriteLine("Lab No: 7b");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

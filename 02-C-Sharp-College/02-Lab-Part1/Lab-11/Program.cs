@@ -25,6 +25,9 @@ namespace GenericsExampleApp
 			m3.Sum("Hello", "World");
 			m3.value = "Greeting";
 			Console.WriteLine(m3.value);
+			Console.WriteLine("Lab No: 11");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

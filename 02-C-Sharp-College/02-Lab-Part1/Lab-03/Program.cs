@@ -20,6 +20,9 @@ namespace JaggedArray
 				}
 				Console.WriteLine();
 			}
+			Console.WriteLine("Lab No: 3");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

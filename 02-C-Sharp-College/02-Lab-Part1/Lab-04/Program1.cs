@@ -64,6 +64,10 @@ namespace IntegerIndexer
 			Console.WriteLine(s2["id"]);
 			Console.WriteLine(s2["name"]);
 			Console.WriteLine(s2["age"]);
+
+			Console.WriteLine("Lab No: 4");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

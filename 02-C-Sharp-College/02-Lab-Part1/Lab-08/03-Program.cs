@@ -14,6 +14,9 @@ namespace StructEnumPartialClass
 			CarColor carC1 = CarColor.Red;
 			Console.WriteLine(carC1);
 			Console.WriteLine((int)carC1);
+			Console.WriteLine("Lab No: 8");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

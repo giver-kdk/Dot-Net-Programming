@@ -13,6 +13,9 @@ namespace DelegateApp
 		{
 			MyDelegate md1 = MethodA;
 			md1("Hello World");
+			Console.WriteLine("Lab No: 9a");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

@@ -25,6 +25,9 @@ namespace AsyncAwaitApp
 		{
 			MethodA();
 			MethodB();
+			Console.WriteLine("Lab No: 17");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

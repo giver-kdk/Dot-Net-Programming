@@ -16,6 +16,10 @@ namespace LambdaDelegate
 			};
 			double square = md2(num);
 			Console.WriteLine(square);
+
+			Console.WriteLine("Lab No: 14a");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

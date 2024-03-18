@@ -54,6 +54,9 @@ namespace ConstructorTypes
 			//Student s4 = new Student("Shyam", 10);          // Private Class Restriction
 
 			Console.WriteLine("Count: " + Student.count);
+			Console.WriteLine("Lab No: 1");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

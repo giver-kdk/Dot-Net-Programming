@@ -24,6 +24,9 @@ namespace ArrayListProgram
 			{
 				Console.WriteLine(obj);
 			}
+			Console.WriteLine("Lab No: 10a");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }

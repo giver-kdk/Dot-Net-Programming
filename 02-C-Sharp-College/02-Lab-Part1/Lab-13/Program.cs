@@ -20,6 +20,9 @@ namespace LINQApp
 			{
 				Console.WriteLine(res);
 			}
+			Console.WriteLine("Lab No: 13");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
 		}
 	}
 }
