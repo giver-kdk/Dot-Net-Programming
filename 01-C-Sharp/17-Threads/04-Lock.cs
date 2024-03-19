@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading;             // 'Thread' class located here
 
 // Lock allows resources(Method, File, etc.) to be accessed by one thread at a time
@@ -26,11 +26,13 @@ namespace LockApp
 
 				// Let's assume it takes some time for transaction
 				Thread.Sleep(500);
-				if(amount > Balance){
+				if (amount > Balance)
+				{
 					Console.WriteLine("Insufficient Balance!");
 				}
-				else{
-					Balance -= amount;					//  Reduce balance for transaction
+				else
+				{
+					Balance -= amount;                  //  Reduce balance for transaction
 					Console.WriteLine("Withdrawn Amount: " + amount);
 					Console.WriteLine("New Balance: " + Balance);
 				}
@@ -47,7 +49,7 @@ namespace LockApp
 			Thread[] threads = new Thread[15];
 
 			// Create threads
-			for(int i = 0; i < 15; i++)
+			for (int i = 0; i < 15; i++)
 			{
 				// Each thread is supposed to withdraw amount 1 from the bank
 				threads[i] = new Thread(() => Bank.Withdraw(1));

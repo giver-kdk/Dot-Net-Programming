@@ -1,6 +1,6 @@
 using System;
 
-namespace IntegerIndexer
+namespace IntegerIndexerStringIndexer
 {
 	public class Student
 	{
