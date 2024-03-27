@@ -1,5 +1,11 @@
 @model WebApplication1.Models.Student;
 @*create form*@
+<style>
+    .field-validation-error
+    {
+        color: red;
+    }
+</style>
 <form asp-controller="Student" asp-action="AddRecordForm" method="post">
     <label asp-for="Id">Student ID: </label>
     <input asp-for="Id" /><br /><br />
