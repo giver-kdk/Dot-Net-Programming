@@ -9,6 +9,17 @@ namespace CustomExceptionApp
 	}
 	public class Program
 	{
+		public static void Main(string[] args)
+		{
+			int age1 = 15;
+			int age2 = 20;
+
+			CheckAge(age1);
+			CheckAge(age2);
+			Console.WriteLine("Lab No: 15");
+			Console.WriteLine("Name: Giver Khadka");
+			Console.WriteLine("Roll No.: 05");
+		}
 		public static void CheckAge(int age)
 		{
 			try
@@ -32,16 +43,6 @@ namespace CustomExceptionApp
 			}
 
 		}
-		public static void Main(string[] args)
-		{
-			int age1 = 15;
-			int age2 = 20;
-
-			CheckAge(age1);
-			CheckAge(age2);
-			Console.WriteLine("Lab No: 15");
-			Console.WriteLine("Name: Giver Khadka");
-			Console.WriteLine("Roll No.: 05");
-		}
+		
 	}
 }

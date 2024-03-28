@@ -1,6 +1,6 @@
 using System;
 
-namespace FuncDelegate
+namespace FuncActionPredicateDelegate
 {
 	public class Program
 	{
