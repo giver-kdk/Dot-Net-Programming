@@ -53,5 +53,5 @@ ASP.Net Core MVC Topics:
 		- AddSingleton, etc.
 
 - Install following tools for working with DB: 
-	- Microsoft SQL Server
+	- Microsoft SQL Server (SQL Plus?)
 	- SSMS(SQL Server Management Studio)
