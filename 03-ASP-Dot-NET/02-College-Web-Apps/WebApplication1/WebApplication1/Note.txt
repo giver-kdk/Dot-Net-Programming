@@ -38,3 +38,20 @@ ASP.Net Core MVC Topics:
 	- These attributes have more properties which can be set like minimum and maximum value for [StringLength]
 
 	- Tags like: asp-validation-summary, asp-validation-for, etc. is used to display the error
+
+
+- IOC: Inversion of Control(It says: Don't call me, we'll call you!)
+	- Passing control to another party for control
+	- Achieved using dependency injection(can be done using built-in IOC Containers)
+	- Used for making loosly coupled system
+	- Loosly coupled system helps for better maintainabiliy
+	- Tightly coupled system
+
+	- Build-in IOC container
+		- AddTransient,
+		- AddScopped,
+		- AddSingleton, etc.
+
+- Install following tools for working with DB: 
+	- Microsoft SQL Server
+	- SSMS(SQL Server Management System)
