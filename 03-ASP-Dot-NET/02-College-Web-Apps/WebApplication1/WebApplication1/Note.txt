@@ -54,4 +54,4 @@ ASP.Net Core MVC Topics:
 
 - Install following tools for working with DB: 
 	- Microsoft SQL Server
-	- SSMS(SQL Server Management System)
+	- SSMS(SQL Server Management Studio)
