@@ -51,6 +51,11 @@ ASP.Net Core MVC Topics:
 		- AddTransient,
 		- AddScopped,
 		- AddSingleton, etc.
+- Steps for dependency injection: 
+	- Create an interface
+	- Create class that implements the interface
+	- Register the interface and class as service in Program.cs
+	- Take service to the constructor, can be done in any controller's constructor
 
 - Install following tools for working with DB: 
 	- Microsoft SQL Server (SQL Plus?)
