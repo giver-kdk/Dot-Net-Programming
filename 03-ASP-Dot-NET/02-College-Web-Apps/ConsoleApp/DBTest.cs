@@ -24,9 +24,13 @@ namespace DatabaseApp
                 string address = "Thulobharyang";
                 long phone = 981159800;
             }
-            catch (Exception ex)
+            catch (SqlException ex)
             {
-
+                Console.WriteLine("Something went wrong!");
+            }
+            finally
+            {
+                conn.Close();
             }
         }
     }
