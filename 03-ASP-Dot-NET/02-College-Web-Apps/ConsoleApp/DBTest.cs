@@ -23,14 +23,19 @@ namespace DatabaseApp
                 string name = "Giver";
                 string address = "Thulobharyang";
                 long phone = 981159800;
+
+                string query = "INSERT INTO TABLE VALUES(" + name + ", " + address + ", " + phone + ")";
+                SqlCommand sqlcmd = new SqlCommand(query, conn);
+                int n = sqlcmd.ExecuteNonQuery();
+                Console.WriteLine(n + " Record Inserted Successfully");
             }
             catch (SqlException ex)
             {
-                Console.WriteLine("Something went wrong!");
+                Console.WriteLine("Error Connecting: " + ex.Message);
             }
             finally
             {
-                conn.Close();
+                Console.WriteLine("Task Complete");
             }
         }
     }
