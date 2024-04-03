@@ -26,7 +26,9 @@ namespace WebApplication2.Controllers
 		{
 			// Run the service in home page
 			_service.SendEmail("Email Message");
-			return View();
+			StudentModel s1 = new StudentModel();
+			s1.Name = "Nirajan";
+			return View(s1);
 		}
 
 		public IActionResult Privacy()

@@ -1,13 +1,7 @@
-using WebApplication2.Service;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-// ********************** Add the custom service here before building app **********************
-//builder.Services.AddTransient<IEmailService, EmailService>();
-// builder.Services.AddScoped<IEmailService, EmailService>();
-builder.Services.AddScoped<IEmailService, print>();
 
 var app = builder.Build();
 
@@ -29,5 +23,8 @@ app.UseAuthorization();
 app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapControllerRoute(
+    name: "Student",
+    pattern: "Students/{action=Index}",
+    defaults: new { controller = "Student" });
 app.Run();

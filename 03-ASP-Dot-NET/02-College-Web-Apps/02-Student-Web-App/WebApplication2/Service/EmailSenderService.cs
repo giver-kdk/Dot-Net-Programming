@@ -12,4 +12,12 @@
 			Console.WriteLine(msg);
 		}
 	}
+	public class print : IEmailService
+	{
+		public void SendEmail(string msg)
+		{
+			Console.WriteLine("Latest" + msg);
+		}
+	}
+
 }
