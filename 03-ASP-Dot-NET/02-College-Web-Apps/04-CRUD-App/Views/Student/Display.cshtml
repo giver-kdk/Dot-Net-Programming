@@ -1,0 +1,21 @@
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<CRUD_App.Models.Student>
+<table>
+       <thead>
+           <th>Student ID</th>
+           <th>Student Name</th>
+           <th>Student Address</th>
+       </thead>
+       <tbody>
+           @foreach(var student in Model)
+            {
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Address</td>
+            }
+       </tbody>
+</table>
