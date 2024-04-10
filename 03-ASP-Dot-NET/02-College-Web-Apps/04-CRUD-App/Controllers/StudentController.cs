@@ -1,13 +1,29 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using CRUD_App.Controllers.Repository;
+using CRUD_App.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CRUD_App.Controllers
 {
     public class StudentController : Controller
     {
+        private readonly StudentRepo _studentRepo = null;
+        // Dependency Injection
+        //public StudentController(StudentRepo studentRepo) // Inject StudentRepo in constructor
+        //{
+        //    _studentRepo = studentRepo;
+        //}
         // GET: StudentController
         public ActionResult Index()
         {
+            return View();
+        }
+      
+        public ActionResult Display()
+        {
+            //List<Student> stds = new List<Student>();
+            //stds = _studentRepo.GetAllRecord();
+            //return View(stds);
             return View();
         }
 
