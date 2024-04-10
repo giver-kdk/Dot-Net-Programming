@@ -1,13 +1,12 @@
-﻿using CRUD_App.Controllers.Repository;
-using CRUD_App.Models;
-using Microsoft.AspNetCore.Http;
+﻿using _04_CRUD_App.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 
-namespace CRUD_App.Controllers
+namespace _04_CRUD_App.Controllers
 {
     public class StudentController : Controller
     {
-        private readonly StudentRepo _studentRepo = null;
+        //private readonly StudentRepo _studentRepo = null;
         // Dependency Injection
         //public StudentController(StudentRepo studentRepo) // Inject StudentRepo in constructor
         //{
@@ -18,7 +17,7 @@ namespace CRUD_App.Controllers
         {
             return View();
         }
-      
+
         public ActionResult Display()
         {
             //List<Student> stds = new List<Student>();
@@ -97,3 +96,5 @@ namespace CRUD_App.Controllers
         }
     }
 }
+
+

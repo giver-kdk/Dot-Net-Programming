@@ -1,10 +1,7 @@
-using CRUD_App.Models;
+﻿using _04_CRUD_App.Models;
 using Microsoft.Data.SqlClient;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 
-namespace CRUD_App.Controllers.Repository
+namespace _04_CRUD_App.Controllers.Repository
 {
     public class StudentRepo
     {
