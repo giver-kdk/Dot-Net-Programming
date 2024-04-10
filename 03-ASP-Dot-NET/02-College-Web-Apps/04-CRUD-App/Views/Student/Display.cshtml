@@ -9,27 +9,29 @@
 @{
 }
 @model IEnumerable<_04_CRUD_App.Models.Student>
-<table>
+<table border="1">
     <thead>
-    <th>Student ID</th>
-    <th>Student Name</th>
-    <th>Student Address</th>
+        <tr>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Student Address</th>
+        </tr>
     </thead>
     <tbody>
-        @if (Model != null)
-        {
-            foreach (var student in Model)
-            {
-            <td>@student.Id</td>
-            <td>@student.Name</td>
-            <td>@student.Address</td>
-            }
-        }
-        else
-        {
         <tr>
-            <td colspan="3">No students found.</td>
+            @if (Model != null)
+            {
+                foreach (var student in Model)
+                {
+                <td>@student.Id</td>
+                <td>@student.Name</td>
+                <td>@student.Address</td>
+                }
+            }
+            else
+            {
+                <td colspan="3">No students found.</td>
+            }
         </tr>
-        }
     </tbody>
 </table>

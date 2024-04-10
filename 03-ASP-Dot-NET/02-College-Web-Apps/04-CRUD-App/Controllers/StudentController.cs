@@ -7,12 +7,8 @@ namespace _04_CRUD_App.Controllers
 {
     public class StudentController : Controller
     {
+        // Create object of 'StudentRepo' to use DB reading method
         public StudentRepo _studentRepo = new StudentRepo();
-        // Dependency Injection
-        //public StudentController(StudentRepo studentRepo) // Inject StudentRepo in constructor
-        //{
-        //    _studentRepo = studentRepo;
-        //}
         // GET: StudentController
         public ActionResult Index()
         {

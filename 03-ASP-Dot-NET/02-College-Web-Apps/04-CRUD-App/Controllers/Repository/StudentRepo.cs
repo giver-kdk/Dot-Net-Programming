@@ -5,6 +5,7 @@ namespace _04_CRUD_App.Controllers.Repository
 {
     public class StudentRepo
     {
+        // Read Logic
         public List<Student> GetAllRecord()
         {
             List<Student> listOfStudents = new List<Student>();
@@ -49,6 +50,36 @@ namespace _04_CRUD_App.Controllers.Repository
             }
 
             return listOfStudents;
+        }
+        // Create Logic
+        public void SetStudent(Student s1)
+        {
+            try
+            {
+                // Write user name from SSMS software
+                //string conStr = @"server=DESKTOP-JAE0FTL\MSSQLSERVER01; database=GiverDB; Trusted_Connection=True; TrustServerCertificate=True;";
+                string conStr = @"server=YUSHUV-PC\SQLEXPRESS; database=giver; Trusted_Connection=True; TrustServerCertificate=True;";
+                SqlConnection conn = new SqlConnection(conStr);
+                conn.Open();
+                Console.WriteLine("Connection Established");
+
+                //string selectQuery = $"INSERT INTO Students VALUES({std.Id}, '{std.Name}', '{std.Address}')";
+                string selectQuery = $"INSERT INTO Student VALUES({s1.Id}, '{s1.Name}', '{s1.Address}')";
+
+                SqlCommand sqlcmd = new SqlCommand(selectQuery, conn);
+                // 'rdr' stores the result of SQL Query
+                int n = sqlcmd.ExecuteNonQuery();
+                Console.WriteLine("Record Inserted Successfully");
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error Connecting: " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Read Complete");
+            }
+
         }
     }
 }
