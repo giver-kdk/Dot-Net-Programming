@@ -1,4 +1,5 @@
-﻿using _04_CRUD_App.Models;
+﻿using _04_CRUD_App.Controllers.Repository;
+using _04_CRUD_App.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,7 +7,7 @@ namespace _04_CRUD_App.Controllers
 {
     public class StudentController : Controller
     {
-        //private readonly StudentRepo _studentRepo = null;
+        public StudentRepo _studentRepo = new StudentRepo();
         // Dependency Injection
         //public StudentController(StudentRepo studentRepo) // Inject StudentRepo in constructor
         //{
@@ -20,10 +21,8 @@ namespace _04_CRUD_App.Controllers
 
         public ActionResult Display()
         {
-            //List<Student> stds = new List<Student>();
-            //stds = _studentRepo.GetAllRecord();
-            //return View(stds);
-            return View();
+            List<Student>? stds = _studentRepo.GetAllRecord();
+            return View(stds);
         }
 
         // GET: StudentController/Details/5
