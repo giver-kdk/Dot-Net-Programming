@@ -77,7 +77,67 @@ namespace _04_CRUD_App.Controllers.Repository
             }
             finally
             {
-                Console.WriteLine("Read Complete");
+                Console.WriteLine("Create Complete");
+            }
+
+        }
+        // Edit Logic
+        public void EditStudent(int id, string newName, string newAddr)
+        {
+            try
+            {
+                // Write user name from SSMS software
+                //string conStr = @"server=DESKTOP-JAE0FTL\MSSQLSERVER01; database=GiverDB; Trusted_Connection=True; TrustServerCertificate=True;";
+                string conStr = @"server=YUSHUV-PC\SQLEXPRESS; database=giver; Trusted_Connection=True; TrustServerCertificate=True;";
+                SqlConnection conn = new SqlConnection(conStr);
+                conn.Open();
+                Console.WriteLine("Connection Established");
+
+                //string selectQuery = $"UPDATE Students SET name={newName}, address={newAddr} WHERE id={id}";
+                string selectQuery = $"UPDATE Student SET name='{newName}', address='{newAddr}' WHERE id={id}";
+
+                SqlCommand sqlcmd = new SqlCommand(selectQuery, conn);
+                // 'rdr' stores the result of SQL Query
+                int n = sqlcmd.ExecuteNonQuery();
+                Console.WriteLine("Record Updated Successfully");
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error Connecting: " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Update Complete");
+            }
+
+        }
+        // Delete Logic
+        public void DeleteStudent(int id)
+        {
+            try
+            {
+                // Write user name from SSMS software
+                //string conStr = @"server=DESKTOP-JAE0FTL\MSSQLSERVER01; database=GiverDB; Trusted_Connection=True; TrustServerCertificate=True;";
+                string conStr = @"server=YUSHUV-PC\SQLEXPRESS; database=giver; Trusted_Connection=True; TrustServerCertificate=True;";
+                SqlConnection conn = new SqlConnection(conStr);
+                conn.Open();
+                Console.WriteLine("Connection Established");
+
+                //string selectQuery = $"DELETE FROM Students id={id}";
+                string selectQuery = $"DELETE FROM Student WHERE id={id}";
+
+                SqlCommand sqlcmd = new SqlCommand(selectQuery, conn);
+                // 'rdr' stores the result of SQL Query
+                int n = sqlcmd.ExecuteNonQuery();
+                Console.WriteLine("Record Deleted Successfully");
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Error Connecting: " + ex.Message);
+            }
+            finally
+            {
+                Console.WriteLine("Delete Complete");
             }
 
         }

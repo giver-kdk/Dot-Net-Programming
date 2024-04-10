@@ -10,13 +10,10 @@ namespace _04_CRUD_App.Controllers
         // Create object of 'StudentRepo' to use DB reading method
         public StudentRepo _studentRepo = new StudentRepo();
         // GET: StudentController
+
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult Display()
-        {
+            // Retrive the data from DB before viewing the page
             List<Student>? stds = _studentRepo.GetAllRecord();
             return View(stds);
         }
@@ -34,12 +31,18 @@ namespace _04_CRUD_App.Controllers
         }
 
         // POST: StudentController/Create
+        // This method runs when form button submitted to create student
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(IFormCollection collection)
         {
             try
             {
+                Student student = new Student();
+                student.Id = Convert.ToInt32(collection["Id"]);
+                student.Name = Convert.ToString(collection["Name"]);
+                student.Address = Convert.ToString(collection["Address"]);
+                _studentRepo.SetStudent(student);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -55,12 +58,17 @@ namespace _04_CRUD_App.Controllers
         }
 
         // POST: StudentController/Edit/5
+        // This method runs when Edit form button submitted to edit student
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, IFormCollection collection)
         {
             try
             {
+                // Form data to update the current data
+                string newName = Convert.ToString(collection["Name"]);
+                string newAddr = Convert.ToString(collection["Address"]);
+                _studentRepo.EditStudent(id, newName, newAddr);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -82,6 +90,8 @@ namespace _04_CRUD_App.Controllers
         {
             try
             {
+                id = Convert.ToInt32(collection["Id"]);
+                _studentRepo.DeleteStudent(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
