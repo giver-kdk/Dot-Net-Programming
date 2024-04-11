@@ -63,7 +63,7 @@ namespace _05_CRUD_App_Sir.Controllers.Repository
                 conn.Open();
                 Console.WriteLine("Connection Established");
 
-                //string selectQuery = $"INSERT INTO Students VALUES({std.Id}, '{std.Name}', '{std.Address}')";
+                //string selectQuery = $"INSERT INTO Students VALUES({s1.Id}, '{s1.Name}', '{s1.Address}')";
                 string selectQuery = $"INSERT INTO Student VALUES({s1.Id}, '{s1.Name}', '{s1.Address}')";
 
                 SqlCommand sqlcmd = new SqlCommand(selectQuery, conn);
