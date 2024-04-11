@@ -13,33 +13,32 @@
         </tr>
     </thead>
     <tbody>
-       
-            @if (Model != null)
-            {
-                foreach (var student in Model)
-                {
-                    <tr>
-                        <td>@student.Id</td>
-                        <td>@student.Name</td>
-                        <td>@student.Address</td>
-                    </tr>
-                }
-            }
-            else
+
+        @if (Model != null)
+        {
+            foreach (var item in Model)
             {
                 <tr>
-                    <td colspan="3">No students found.</td>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Address</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
                 </tr>
             }
+        }
+        else
+        {
+            <tr>
+                <td colspan="3">No students found.</td>
+            </tr>
+        }
     </tbody>
 </table>
 
 <div>
     <a asp-action="Create">Create Student</a>
-</div>
-<div>
-    <a asp-action="Edit">Edit Student</a>
-</div>
-<div>
-    <a asp-action="Delete">Delete Student</a>
 </div>
