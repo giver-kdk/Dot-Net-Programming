@@ -4,3 +4,10 @@ To implement ORM(Object Relational Mapping), install following frameworks:
 
 - Create DB Context
 - Perform Migration
+	- Goto Tools > NuGet Package Manage > Package Manager Console
+	- Goto appsettings.json and specify connection string
+	- Goto Program.cs: 
+		- Declare connection string variable as 'conStr'
+		- Add DB Context with Connection String
+	- Type Command: add-migration migration_name
+	- 
