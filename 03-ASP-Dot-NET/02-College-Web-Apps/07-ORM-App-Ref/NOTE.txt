@@ -1,0 +1,3 @@
+To implement ORM(Object Relational Mapping), install following frameworks: 
+	- Microsoft.EntityFrameworkCore.SqlServer
+	- Microsoft.EntityFrameworkCore.Tools
