@@ -1,3 +1,13 @@
 To implement ORM(Object Relational Mapping), install following frameworks: 
 	- Microsoft.EntityFrameworkCore.SqlServer
 	- Microsoft.EntityFrameworkCore.Tools
+
+- Create DB Context
+- Perform Migration
+	- Goto Tools > NuGet Package Manage > Package Manager Console
+	- Goto appsettings.json and specify connection string as 'myConStr'
+	- Goto Program.cs: 
+		- Declare connection string variable as 'conStr'
+		- Add DB Context with Connection String to configure DB Provider
+	- Type Command: add-migration migration_name
+	- 
