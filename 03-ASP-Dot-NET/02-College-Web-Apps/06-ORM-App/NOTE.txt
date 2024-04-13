@@ -33,5 +33,5 @@ ORM(Object Relational Mapping):
 	- Goto Program.cs: 
 		- Declare connection string variable as 'conStr'
 		- Add DB Context with Connection String to configure DB Provider
-	- Type Command: add-migration migration_name
-	- 
+	- To create migration files, type Command: add-migration migration_name
+	- To create DB with reference to code, type: update-database
