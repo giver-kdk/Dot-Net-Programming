@@ -10,7 +10,7 @@ namespace _06_ORM_App.Models
         {
 
         }
-        // Here, name of the table will be 'products'
+        // Here, 'products' represents the table in DB
         DbSet<Product> products;
     }
 }
