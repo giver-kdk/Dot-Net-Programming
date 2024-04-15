@@ -22,7 +22,7 @@ namespace _06_ORM_App.Controllers
         // GET: ProductController/Details/5
         public ActionResult Details(int id)
         {
-            // ******  ******
+            // ****** Use ProductRepo to get single record ******
             return View(_repo.GetSingleRecord(id));
         }
 
@@ -41,6 +41,7 @@ namespace _06_ORM_App.Controllers
             {
                 if(ModelState.IsValid)
                 {
+                    // ****** Use ProductRepo to add record ******
                     _repo.AddRecord(prod);
                     return Content("Record has been inserted");
                 }
@@ -70,6 +71,7 @@ namespace _06_ORM_App.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    // ****** Use ProductRepo to update record ******
                     _repo.UpdateRecord(prod);
                     return Content("Record has been updated");
                 }
@@ -99,6 +101,7 @@ namespace _06_ORM_App.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    // ****** Use ProductRepo to delete record ******
                     _repo.DeleteRecord(prod);
                     return Content("Record has been Deleted");
                 }
