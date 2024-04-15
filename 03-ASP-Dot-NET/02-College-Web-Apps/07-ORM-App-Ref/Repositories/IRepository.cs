@@ -3,10 +3,15 @@ namespace _06_ORM_App.Repositories
     // Create an interface to create a standard for large project
     public interface IRepository<T>
     {
+        // 'AddRecord()' returns void because there is no data manipulation
         public void AddRecord(T model);
-        public IEnumerable<T> GetAllRecords();
+        // 'GetAllRecords()' returns 'List<T>' because there is data fetch and needs to be returned
+        public List<T> GetAllRecords();
+        // 'UpdateRecord()' returns 'T' because there is data fetch and needs to be returned
         public T GetSingleRecord(int id);
+        // 'UpdateRecord()' returns 'T' because there is data manipulation
         public T UpdateRecord(T model);
-        public T DeleteRecord(T model);
+        // 'UpdateRecord()' returns void because there is no data manipulation
+        public void DeleteRecord(T model);
     }
 }

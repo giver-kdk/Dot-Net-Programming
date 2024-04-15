@@ -16,17 +16,17 @@ namespace _06_ORM_App.Repositories
         {
             // Add the product from the context. Here, still DB is not updated
             _context.Add(model);
-            // Here, the changes are saved usign 'SaveChanges()' method
+            // Use 'SaveChanges()' method if any data modifications are done
             _context.SaveChanges();
         }
 
-        public Product DeleteRecord(Product model)
+        public void DeleteRecord(Product model)
         {
             _context.Remove(model);
-            return model;
+            _context.SaveChanges();
         }
 
-        public IEnumerable<Product> GetAllRecords()
+        public List<Product> GetAllRecords()
         {
             List<Product> allProducts = _context.Products.ToList();
             return allProducts;
@@ -43,6 +43,7 @@ namespace _06_ORM_App.Repositories
         public Product UpdateRecord(Product model)
         {
             _context.Update(model);
+            _context.SaveChanges();
             return model;
         }
     }
