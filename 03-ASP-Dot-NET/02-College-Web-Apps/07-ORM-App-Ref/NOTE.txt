@@ -37,6 +37,8 @@ ORM(Object Relational Mapping):
 	- To create DB with reference to code, type: update-database
 	- Goto SSMS and Refresh to see the updated Database
 
+********************************************************************************************************
+
 - Update Database with Migration
 	- Update model by adding extra fields like 'Price' for product
 	- Add another migration: add-migration Product1
