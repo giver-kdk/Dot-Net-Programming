@@ -50,3 +50,13 @@ ORM(Object Relational Mapping):
 	- Select View Name and Template
 	- Select Model and DbContext
 	- Create views for Index, Details, Create, Edit and Delete
+
+- Create a Repository but by usign Interface this time:
+	- Create an Interface and implement it to create the Repository Class
+	- We can do Dependancy Injection here
+	- Implement all the CRUD methods from the context object
+	- Add the context by Dependency Injection in 'Program.cs':
+		- builder.Services.AddScoped<IRepository<Product>, ProductRepo>();
+
+- Utilize ProductRepo in ProductController using Dependency Injection 
+
