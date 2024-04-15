@@ -11,6 +11,7 @@ namespace _06_ORM_App.Models
 
         }
         // Here, 'products' represents the table in DB
+        // NOTE: The table should be a property
         DbSet<Product> Products { get; set; }
     }
 }
