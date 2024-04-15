@@ -35,3 +35,16 @@ ORM(Object Relational Mapping):
 		- Add DB Context with Connection String to configure DB Provider
 	- To create migration files, type Command: add-migration migration_name
 	- To create DB with reference to code, type: update-database
+	- Goto SSMS and Refresh to see the updated Database
+
+- Update Database with Migration
+	- Update model by adding extra fields like 'Price' for product
+	- Add another migration: add-migration Product1
+	Update DB: update-database
+
+- Add ProductController.cs
+- Add Product Views: 
+	- Select Razor Views
+	- Select View Name and Template
+	- Select Model and DbContext
+	- Create views for Index, Details, Create, Edit and Delete
