@@ -64,15 +64,23 @@ namespace _06_ORM_App.Controllers
         // POST: ProductController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(Product prod)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _repo.UpdateRecord(prod);
+                    return Content("Record has been updated");
+                }
+                else
+                {
+                    return View(prod);
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return Content("Something went wrong when updating record: " + ex.Message);
             }
         }
 
@@ -85,15 +93,23 @@ namespace _06_ORM_App.Controllers
         // POST: ProductController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Delete(Product prod)
         {
             try
             {
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    _repo.DeleteRecord(prod);
+                    return Content("Record has been Deleted");
+                }
+                else
+                {
+                    return View(prod);
+                }
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return Content("Something went wrong when deleting record: " + ex.Message);
             }
         }
     }
