@@ -1,15 +1,19 @@
 using _06_ORM_App.Models;
+using _06_ORM_App.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-// ***** Declare connection string from appsetting.json *****
+// Declare connection string from appsetting.json
 var conStr = builder.Configuration.GetConnectionString("myConStr");
 
-// Add services to the container.
+// ******* Add services to the container *******
 builder.Services.AddControllersWithViews();
-// ***** Configure DB provider by adding DB Context with Connection String *****
+// ******* Add DB Context with Connection String *******
+// ******* 'Scoped' lifetime is needed for using DbContext in this case *******
 builder.Services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(conStr));
-
+//builder.Services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(conStr), ServiceLifetime.Scoped);
+// ******* Dependency Injection *******
+builder.Services.AddScoped<IRepository<Product>, ProductRepo>();
 
 var app = builder.Build();
 
