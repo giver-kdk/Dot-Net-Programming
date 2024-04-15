@@ -5,10 +5,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Declare connection string from appsetting.json
 var conStr = builder.Configuration.GetConnectionString("myConStr");
 
-// Add services to the container.
+// ******* Add services to the container *******
 builder.Services.AddControllersWithViews();
-// Add DB Context with Connection String
+// ******* Add DB Context with Connection String *******
 builder.Services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(conStr));
+// ******* Dependency Injection *******
+builder.Services.AddScoped<IRepository<Product>, ProductRepo>();
 
 var app = builder.Build();
 
