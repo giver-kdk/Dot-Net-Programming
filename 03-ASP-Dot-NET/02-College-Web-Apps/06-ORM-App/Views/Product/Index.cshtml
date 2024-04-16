@@ -45,3 +45,19 @@
 }
     </tbody>
 </table>
+
+@* ************* Utilize TempData[] to display respective message on the basis of action ************** *@
+@{
+    string success_message = "";
+    if (TempData["success_on_insert"] != null)
+        success_message = "Item inserted successfully";
+    if (TempData["success_on_edit"] != null)
+        success_message = "Item edited successfully";
+    if (TempData["success_on_delete"] != null)
+        success_message = "Item deleted successfully";
+
+    if(success_message != "")
+    {
+        <p>@success_message</p>
+    }
+}

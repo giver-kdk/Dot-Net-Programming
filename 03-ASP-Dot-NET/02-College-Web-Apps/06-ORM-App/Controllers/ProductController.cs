@@ -31,6 +31,7 @@ namespace _06_ORM_App.Controllers
         // GET: ProductController/Create
         public ActionResult Create()
         {
+
             return View();
         }
 
@@ -45,7 +46,10 @@ namespace _06_ORM_App.Controllers
                 {
                     // ****** Use ProductRepo to add record ******
                     _repo.AddRecord(prod);
-                    return Content("Record has been inserted");
+                    // 'TempData[]' is globally accessible in ASP.NET. We set it to non-null
+                    TempData["success_on_insert"] = "Inserted";
+                    // Go back to index page by setting 'TempData[]'
+                    return RedirectToAction("Index");
                 }
                 else
                 {
@@ -82,7 +86,8 @@ namespace _06_ORM_App.Controllers
                 {
                     // ****** Use ProductRepo to update record ******
                     _repo.UpdateRecord(prod);
-                    return Content("Record has been updated");
+                    TempData["success_on_edit"] = "Edited";
+                    return RedirectToAction("Index");
                 }
                 else
                 {
@@ -115,7 +120,8 @@ namespace _06_ORM_App.Controllers
                 {
                     // ****** Use ProductRepo to delete record ******
                     _repo.DeleteRecord(prod);
-                    return Content("Record has been Deleted");
+                    TempData["success_on_delete"] = "Deleted";
+                    return RedirectToAction("Index");
                 }
                 else
                 {
