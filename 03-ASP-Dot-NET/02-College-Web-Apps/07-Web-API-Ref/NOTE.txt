@@ -22,3 +22,8 @@
 - Access package manager console and run commands:
 	- add-migration migration_name
 	- update-database
+
+- Add controller for College: 
+    - Add 'Controller'
+    - Select API
+    - Select 'API controller with Actions, usign Entity Framework'
