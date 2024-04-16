@@ -32,7 +32,7 @@
 
 - Perform Dependency Injection in Program.cs for and run the application
 - In default swagger: 
-	- Set data in 'Request Body'
+	- Set data in 'Request Body'. NOTE: Don't change the 'id' value. Set it to '0' as it is
 	- Execute the request
 	- Check response on 'Responses'
 
