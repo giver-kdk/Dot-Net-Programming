@@ -1,3 +1,5 @@
+***************************  NOTE IN SYLLABUS **************************
+
 - Create Web API Project selecting "ASP.NET Web API" project
 - This is just an API, so there is no view to visualize
 - For API testing, Swagger can be used(It is by defautl integrated in .NET)
@@ -33,3 +35,5 @@
 	- Set data in 'Request Body'
 	- Execute the request
 	- Check response on 'Responses'
+
+	- Test API using 'Postman' as well

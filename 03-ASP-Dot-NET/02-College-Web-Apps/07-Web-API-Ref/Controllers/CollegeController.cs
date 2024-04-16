@@ -31,12 +31,13 @@ namespace _07_Web_API.Controllers
         }
 
         // POST api/<CollegeController>
-        [HttpPost]
         // ************ Modify the pre-built method name ***********
         // public void Post([FromBody] string value)
+        [HttpPost]
         public void InsertRecord(College clz)
         {
             _collegerepo.AddRecord(clz);
+            
         }
 
         // PUT api/<CollegeController>/5
