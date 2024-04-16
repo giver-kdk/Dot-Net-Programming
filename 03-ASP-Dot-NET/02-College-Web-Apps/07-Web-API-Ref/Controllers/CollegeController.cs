@@ -36,7 +36,7 @@ namespace _07_Web_API.Controllers
         // public void Post([FromBody] string value)
         public void InsertRecord(College clz)
         {
-
+            _collegerepo.AddRecord(clz);
         }
 
         // PUT api/<CollegeController>/5
