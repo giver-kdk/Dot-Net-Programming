@@ -27,3 +27,9 @@
     - Add 'Controller'
     - Select API
     - Select 'API controller with read/write Actions'
+
+- Perform Dependency Injection in Program.cs for and run the application
+- In default swagger: 
+	- Set data in 'Request Body'
+	- Execute the request
+	- Check response on 'Responses'
