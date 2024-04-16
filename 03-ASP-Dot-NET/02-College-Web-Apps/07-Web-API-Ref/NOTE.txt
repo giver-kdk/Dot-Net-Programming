@@ -26,4 +26,4 @@
 - Add controller for College: 
     - Add 'Controller'
     - Select API
-    - Select 'API controller with Actions, usign Entity Framework'
+    - Select 'API controller with read/write Actions'
