@@ -18,16 +18,20 @@ namespace _07_Web_API.Controllers
         }
         // GET: api/<CollegeController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        //public IEnumerable<string> Get()
+        public List<College> GetRecords()
         {
-            return new string[] { "value1", "value2" };
+            return _collegerepo.GetAllRecords();
+            //return new string[] { "value1", "value2" };
         }
 
         // GET api/<CollegeController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        //public string Get(int id)
+        public College GetOneRecord(int id)
         {
-            return "value";
+            return _collegerepo.GetSingleRecord(id);
+            //return "value";
         }
 
         // POST api/<CollegeController>
@@ -37,19 +41,23 @@ namespace _07_Web_API.Controllers
         public void InsertRecord(College clz)
         {
             _collegerepo.AddRecord(clz);
-            
         }
 
         // PUT api/<CollegeController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        //public void Put(int id, [FromBody] string value)
+        public void EditRecord(College clz)
         {
+            _collegerepo.UpdateRecord(clz);
         }
 
         // DELETE api/<CollegeController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        //public void Delete(int id)
+        public void RemoveRecord(int id)
         {
+            College clz = GetOneRecord(id);
+            _collegerepo.DeleteRecord(clz);
         }
     }
 }
