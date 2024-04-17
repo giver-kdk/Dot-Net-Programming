@@ -1,0 +1,39 @@
+***************************  NOTE IN SYLLABUS **************************
+
+- Create Web API Project selecting "ASP.NET Web API" project
+- This is just an API, so there is no view to visualize
+- For API testing, Swagger can be used(It is by defautl integrated in .NET)
+- We can also use PostMan
+
+- Create 'Repositories' folder
+
+- Create 'Models' folder
+		- Create Required models
+		- Create DB Context
+
+- Set the connection string in 'appsettings.json' 
+- Add the DB Context in Program.cs using the connection string 
+
+
+************ Adding Migration ***************
+- In project's .csproj file, inside 'PropertyGroup', make the 'InvarientGlobalization' to 'false' as:
+		<PropertyGroup>
+		  <InvariantGlobalization>false</InvariantGlobalization>
+		</PropertyGroup>
+
+- Access package manager console and run commands:
+	- add-migration migration_name
+	- update-database
+
+- Add controller for College: 
+    - Add 'Controller'
+    - Select API
+    - Select 'API controller with read/write Actions'
+
+- Perform Dependency Injection in Program.cs for and run the application
+- In default swagger: 
+	- Set data in 'Request Body'. NOTE: Don't change the 'id' value. Set it to '0' as it is
+	- Execute the request
+	- Check response on 'Responses'
+
+	- Test API using 'Postman' as well
