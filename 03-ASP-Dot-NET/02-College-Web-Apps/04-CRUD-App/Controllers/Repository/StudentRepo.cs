@@ -39,7 +39,9 @@ namespace _04_CRUD_App.Controllers.Repository
                     Console.WriteLine(std.Address);
                     listOfStudents.Add(std);            // Add DB record in the list
                 }
-            }
+				// Good practice to close connection to allow other users to access server 
+				conn.Close();
+			}
             catch (SqlException ex)
             {
                 Console.WriteLine("Error Connecting: " + ex.Message);
@@ -70,6 +72,8 @@ namespace _04_CRUD_App.Controllers.Repository
                 // 'rdr' stores the result of SQL Query
                 int n = sqlcmd.ExecuteNonQuery();
                 Console.WriteLine("Record Inserted Successfully");
+			    // Good practice to close connection to allow other users to access server 
+			    conn.Close();
             }
             catch (SqlException ex)
             {
@@ -80,7 +84,7 @@ namespace _04_CRUD_App.Controllers.Repository
                 Console.WriteLine("Create Complete");
             }
 
-        }
+		}
         // Edit Logic
         public void EditStudent(int id, string newName, string newAddr)
         {
@@ -100,7 +104,10 @@ namespace _04_CRUD_App.Controllers.Repository
                 // 'rdr' stores the result of SQL Query
                 int n = sqlcmd.ExecuteNonQuery();
                 Console.WriteLine("Record Updated Successfully");
-            }
+
+				// Good practice to close connection to allow other users to access server 
+				conn.Close();
+			}
             catch (SqlException ex)
             {
                 Console.WriteLine("Error Connecting: " + ex.Message);
@@ -130,7 +137,10 @@ namespace _04_CRUD_App.Controllers.Repository
                 // 'rdr' stores the result of SQL Query
                 int n = sqlcmd.ExecuteNonQuery();
                 Console.WriteLine("Record Deleted Successfully");
-            }
+
+				// Good practice to close connection to allow other users to access server 
+				conn.Close();
+			}
             catch (SqlException ex)
             {
                 Console.WriteLine("Error Connecting: " + ex.Message);

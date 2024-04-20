@@ -41,6 +41,8 @@ ASP.Net Core MVC Topics:
 
 
 - IOC: Inversion of Control(It says: Don't call me, we'll call you!)
+	- It means giving the program control to the framework(or container) for some action
+	- During DI, control is given to ASP.NET to create class object from specified interface (which were injected in Program.cs)
 	- Passing control to another party for control
 	- Achieved using dependency injection(can be done using built-in IOC Containers)
 	- Used for making loosly coupled system
@@ -51,7 +53,9 @@ ASP.Net Core MVC Topics:
 		- AddTransient,
 		- AddScopped,
 		- AddSingleton, etc.
-- Steps for dependency injection: 
+- Steps for dependency injection(DI): 
+	- It states higher level(main) program should not depend upon the hard-coded version of sub-program, 
+	but should depend upon their abstraction(Eg: Interface of a class instead of class itself)
 	- Create an interface
 	- Create class that implements the interface
 	- Register the interface and class as service in Program.cs

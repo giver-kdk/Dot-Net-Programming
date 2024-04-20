@@ -8,8 +8,7 @@ var conStr = builder.Configuration.GetConnectionString("myConStr");
 
 // ******* Add services to the container *******
 builder.Services.AddControllersWithViews();
-// ******* Add DB Context with Connection String *******
-// ******* 'Scoped' lifetime is needed for using DbContext in this case *******
+// ******* Add DB Context Options with mentioning DB Provider and Connection String *******
 builder.Services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(conStr));
 //builder.Services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(conStr), ServiceLifetime.Scoped);
 // ******* Dependency Injection *******

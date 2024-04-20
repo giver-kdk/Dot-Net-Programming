@@ -1,6 +1,12 @@
+Entity Framework Core: 
+	- It is open-source and coss-platform
+	- It is an ORM
+
 ORM(Object Relational Mapping): 
 	- Maps DB tables into .NET objects and classes
-	- Allows to query DB in OOP fashiion
+	- Allows to query DB in OOP fashion
+	- It automatically generates the SQL query to perform required action(CRUD)
+	- No need to use 'SqlCommand' to manually execute query like in ADO.NET
 	- Before ORM, devs used to manually execute command to map the data from DB
 	- It has 3 workflows: 
 		1. Database First Workflow
@@ -18,6 +24,7 @@ ORM(Object Relational Mapping):
 
 - Create DB Context
 	- It's a class provided by Entity Framework and is a gateway to our DB
+	- It's used to connect and interact with the DB
 	- Create DB Sets
 		- It represents table in DB
 		- DB Context can have one or more DB Sets

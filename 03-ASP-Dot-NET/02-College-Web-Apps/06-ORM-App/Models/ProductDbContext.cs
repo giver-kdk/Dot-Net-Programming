@@ -5,6 +5,8 @@ namespace _06_ORM_App.Models
     // Inherit 'ProductDbContext' from 'DbContext'
     public class ProductDbContext : DbContext
     {
+        // 'DbContext' need 'DbContextOptions' object in order to function
+        // 'DbContextOptions' contains configuration info like connection string, DB Provider, etc.
         // Constructor needs to accept 'DbContextOptions' object and pass it to base constructor
         public ProductDbContext(DbContextOptions<ProductDbContext> options) : base(options)
         {

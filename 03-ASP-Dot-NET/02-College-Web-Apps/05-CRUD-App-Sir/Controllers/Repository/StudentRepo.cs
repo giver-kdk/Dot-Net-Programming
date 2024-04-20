@@ -95,6 +95,8 @@ namespace _05_CRUD_App_Sir.Controllers.Repository
             // 'rdr' stores the result of SQL Query
             int n = sqlcmd.ExecuteNonQuery();
             Console.WriteLine("Record Inserted Successfully");
+
+            // Here, no need to manually close connection with 'conn.Close()'
         }
     }
     // View Record
@@ -123,7 +125,9 @@ namespace _05_CRUD_App_Sir.Controllers.Repository
                 std.Name = Convert.ToString(rdr["name"]);
                 std.Address = Convert.ToString(rdr["address"]);
             }
-            return std;
+			// Good practice to close connection to allow other users to access server 
+			conn.Close();
+			return std;
         }
     }
     // Edit Logic
@@ -139,9 +143,11 @@ namespace _05_CRUD_App_Sir.Controllers.Repository
             //string selectQuery = $"UPDATE Student SET name='{newName}', address='{newAddr}' WHERE id={id}";
 
             SqlCommand sqlcmd = new SqlCommand(selectQuery, conn);
-            // 'rdr' stores the result of SQL Query
+            // 'n' means number of affected rows
             int n = sqlcmd.ExecuteNonQuery();
             Console.WriteLine("Record Updated Successfully");
+            // Good practice to close connection to allow other users to access server 
+            conn.Close();
         }
         catch (SqlException ex)
         {
@@ -151,7 +157,7 @@ namespace _05_CRUD_App_Sir.Controllers.Repository
         {
             Console.WriteLine("Update Complete");
         }
-
+        
     }
     // Delete Logic
     public void DeleteStudent(int id)
@@ -168,7 +174,9 @@ namespace _05_CRUD_App_Sir.Controllers.Repository
             SqlCommand sqlcmd = new SqlCommand(selectQuery, conn);
             int n = sqlcmd.ExecuteNonQuery();
             Console.WriteLine("Record Deleted Successfully");
-        }
+			// Good practice to close connection to allow other users to access server 
+			conn.Close();
+		}
         catch (SqlException ex)
         {
             Console.WriteLine("Error Connecting: " + ex.Message);
