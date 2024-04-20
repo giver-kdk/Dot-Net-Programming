@@ -16,8 +16,8 @@ namespace WebApplication1.Controllers
         }
 		public IActionResult Details(Student s)
         {
-            // Sample student data (replace with logic to retrieve data from database etc.)
-            if (s.Name != "")
+			// Sample student data (replace with logic to retrieve data from database etc.)
+			if (ModelState.IsValid)
             {
                 return View(s);
             }
