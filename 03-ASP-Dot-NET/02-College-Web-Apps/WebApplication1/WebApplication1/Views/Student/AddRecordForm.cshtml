@@ -1,4 +1,3 @@
-@model WebApplication1.Models.Student;
 @*create form*@
 <style>
     .field-validation-error
@@ -8,16 +7,20 @@
 </style>
 <form asp-controller="Student" asp-action="AddRecordForm" method="post">
     <label asp-for="Id">Student ID: </label>
-    <input asp-for="Id" /><br /><br />
+    <input asp-for="Id" name="Id"/><br /><br />
     <span asp-validation-for="Id"></span><br /><br />
 
-    <label asp-for="Name">Student ID: </label>
-    <input asp-for="Name" /><br /><br />
+    <label asp-for="Name">Student Name: </label>
+    <input asp-for="Name" name="Name" /><br /><br />
     <span asp-validation-for="Name"></span><br /><br />
     
-    <label asp-for="Age">Student ID: </label>
-    <input asp-for="Age" /><br /><br />
+    <label asp-for="Age">Student Age: </label>
+    <input asp-for="Age" name="Age" /><br /><br />
     <span asp-validation-for="Age"></span><br /><br />
+
+    <label asp-for="Age">Student Email: </label>
+    <input asp-for="Email" name="Email" /><br /><br />
+    <span asp-validation-for="Email"></span><br /><br />
 
     <input type="submit" value="Save">
 </form>
