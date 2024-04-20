@@ -31,9 +31,12 @@ namespace Student.Controllers
             return View();
         }
         [HttpPost]
+
         public IActionResult AddRecordForm(Student s)
         {
-            // Check if the form is validated or not
+            // Model Binding converts string form input (HTTP-POST) to 'Student s' object in this action method.
+            // During that process, the data needs to fulfill the type and validation attribute of the model.
+            // 'ModelState.IsValid' checks if conversion occurred by satisfying validation rules of model or not.
             if(ModelState.IsValid)
             {
                 return View("Details", s);
