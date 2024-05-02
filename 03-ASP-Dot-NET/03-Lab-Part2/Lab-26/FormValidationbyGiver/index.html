@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation with jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<h3>Name: Giver Khadka</h3>
+	<h3>Roll No.: 05</h3>
+    <form id="myForm">
+        <input type="text" id="uname" placeholder="Name" style="display: block;">
+        <input type="password" id="pw" placeholder="Password" style="display: block;">
+        <input type="submit" id="sub" value="SignUp">
+    </form>
+
+    <script>
+        $(document).ready(function () {
+            $("#myForm").submit(function (event) {
+                event.preventDefault(); // Prevent form submission
+
+                let pwRegex = /^[A-Z]+\$$/gi;
+                let user = $("#uname").val();
+                let password = $("#pw").val();
+                let success = true;
+
+                if (!user) {
+                    alert("User name should not be empty!");
+                    success = false;
+                }
+                if (!pwRegex.test(password)) {
+                    alert("Password must start with capital letter and end with $!");
+                    success = false;
+                }
+                if (success) {
+                    alert("Form Submit Successful!");
+                    // Here you can perform any further actions after successful form submission
+                }
+            });
+        });
+    </script>
+</body>
+</html>
