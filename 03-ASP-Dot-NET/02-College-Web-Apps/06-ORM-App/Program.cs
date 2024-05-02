@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Declare connection string from appsetting.json
 var conStr = builder.Configuration.GetConnectionString("myConStr");
 
-// ******* Add services to the container *******
+//  Add services to the container
 builder.Services.AddControllersWithViews();
 // ******* Add DB Context Options with mentioning DB Provider and Connection String *******
 builder.Services.AddDbContext<ProductDbContext>(options => options.UseSqlServer(conStr));
