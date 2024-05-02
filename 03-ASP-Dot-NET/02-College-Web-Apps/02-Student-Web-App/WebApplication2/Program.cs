@@ -6,8 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 // ********************** Add the custom service here before building app **********************
 //builder.Services.AddTransient<IEmailService, EmailService>();
-// builder.Services.AddScoped<IEmailService, EmailService>();
-builder.Services.AddScoped<IEmailService, print>();
+ builder.Services.AddScoped<IEmailService, EmailService>();
+//builder.Services.AddScoped<IEmailService, print>();
 
 var app = builder.Build();
 

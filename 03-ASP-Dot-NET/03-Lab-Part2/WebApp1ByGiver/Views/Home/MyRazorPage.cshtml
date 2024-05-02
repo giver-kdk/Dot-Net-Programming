@@ -1,0 +1,24 @@
+﻿<html>
+<head><title>My Razor Page</title></head>
+<body>
+    <h6>Current Date and Time</h6>
+    <p>@DateTime.Now</p>
+    
+    <h6>My Information</h6>
+    <p>Name: Giver Khadka <br> Roll No.: 05 </p>
+
+    <h6>Multiplication Table of (5 + 1) = 6: </h6>
+    <table>
+        <tbody>
+            @for (int i = 1; i <= 10; i++)
+            {
+                <tr>
+                    @{var product = i * 6;}
+                    <td>6 * @i = @product</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
+
