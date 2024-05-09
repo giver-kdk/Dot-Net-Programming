@@ -1,30 +1,63 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using WebApp7ByGiver.Models;
+using Webapp07ByGiver.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-// *********** Add connection string and DB Context ************
-string conStr = builder.Configuration.GetConnectionString("myConStr");
-builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(conStr));
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+// ********* Add Roles Manually **************
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
-// ********** Configure Identity **********
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
- .AddEntityFrameworkStores<AppDbContext>()
- .AddDefaultTokenProviders();
 
-//  ************ Add Authentication *************
-builder.Services.AddAuthentication();
+builder.Services.AddRazorPages();
+
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+// ************** Creating Roles ********************
+using (var scope = app.Services.CreateScope())
 {
-    app.UseExceptionHandler("/Home/Error");
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<IdentityUser>>();
+    var roles = new[] { "Admin", "Member" };
+
+    var defaultRole = roles[1];
+
+    foreach (var role in roles)
+    {
+        if (!await roleManager.RoleExistsAsync(role))
+        {
+            await roleManager.CreateAsync(new IdentityRole(role));
+        }
+    }
+    // ***** Assign Default Role *****
+    var roleExists = await roleManager.RoleExistsAsync(defaultRole);
+    if (!roleExists)
+    {
+        await roleManager.CreateAsync(new IdentityRole(defaultRole));
+    }
+    var users = await userManager.Users.ToListAsync();
+    foreach (var user1 in users)
+    {
+        await userManager.AddToRoleAsync(user1, defaultRole);
+    }
+}
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseMigrationsEndPoint();
+}
+else
+{
+    app.UseExceptionHandler("/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
@@ -34,12 +67,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-app.UseAuthorization();
-// ****************** Use Authentication *******************
-app.UseAuthentication();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.UseAuthorization();
+app.MapRazorPages();
 
 app.Run();
+
