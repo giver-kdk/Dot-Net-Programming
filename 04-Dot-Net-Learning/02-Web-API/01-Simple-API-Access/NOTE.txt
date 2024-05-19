@@ -1,0 +1,16 @@
+SIMPLE METHOD TO USE API IN ASP.NET: 
+
+- HttpClient is used to interact with REST API 
+	- Add HttpClient service in Program.cs using Dependency Injection
+		- Specify name of the HttpClient
+		- Define the base address for the HttClient service
+	- Use the 'IHttpClientFactory' interface to inject the service in API Controller
+
+- Create usable HttpClient(with name) in the API Controller using injected HttpController service
+- Create a request parameter URL
+- Perform the method(Get, Post, Put, etc) on the request parameter URL(NOTE: Base address already provided in Program.cs)
+- Convert the response into result of desired type(JSON, Text, etc.)
+
+
+
+In this program, we will be applying GET request on weather API to get the weather data.
