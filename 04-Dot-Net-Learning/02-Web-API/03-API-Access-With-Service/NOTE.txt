@@ -1,0 +1,24 @@
+********** MOST POPULAR METHOD TO USE API IN ASP.NET with JSON Response Model: **********
+
+- Create a model for JSON response that comes from API
+	- Copy API response JSON example
+	- Open Model Class File 
+	- Goto Edit > Paste Special > Paste JSON as Class
+
+- Create a service for requesting JSON response that comes from API
+	- Create a a custom JSON service class
+	- Inject the HttpClient object to perform API request using JSON Response Model
+
+- HttpClient of is used to interact with REST API 
+	- Add HttpClient(with JSON Response Model generic type) service in Program.cs using Dependency Injection
+		- Specify name of the HttpClient
+		- Define the base address for the HttClient service
+	- Use the 'IHttpClientFactory' interface to inject the service in API Controller
+
+- Create usable HttpClient(with name) in the API Controller using injected HttpController service
+- Create a request parameter URL
+- Perform the method(Get, Post, Put, etc) on the request parameter URL(NOTE: Base address already provided in Program.cs)
+- Convert the response into result of desired type(JSON, Text, etc.)
+
+
+In conclusion, program uses JSON Service, JSON Service uses HttpClient with JSON Request Model to perform API Request
