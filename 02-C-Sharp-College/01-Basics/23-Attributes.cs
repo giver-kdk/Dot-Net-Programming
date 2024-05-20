@@ -28,11 +28,19 @@ namespace AttributeApp
 	{
 		public static void Main(string[] args)
 		{
-			var attr = Attribute.GetCustomAttributes(typeof(Program));
+			var attr = Attribute.GetBugAttributes(typeof(Program));
 			foreach (var a in attr)
 			{
 				Console.WriteLine(a);
 			}
-		}
+            BugAttribute attribute = (BugAttribute)Attribute.GetBugAttribute(
+            typeof(Program).GetMethod("Main"),
+            typeof(BugAttribute));
+
+            if (attribute != null)
+            {
+                Console.WriteLine($"Description: {attribute.Description}");
+            }
+        }
 	}
 }
