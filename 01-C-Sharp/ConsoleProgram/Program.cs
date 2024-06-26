@@ -1,39 +1,46 @@
 ﻿using System;
-using System.Net.Http;
-using System.Threading.Tasks;
 
-class Program
+namespace AttributeApp
 {
-    static async Task Main(string[] args)
+    [AttributeUsage(
+    AttributeTargets.Class |
+    AttributeTargets.Struct |
+    AttributeTargets.Constructor |
+    AttributeTargets.Field |
+    AttributeTargets.Property |
+    AttributeTargets.Method,
+    AllowMultiple = true)]              // Allowing multiple instances of attribute
+    public class BugAttribute : Attribute
     {
-        // URL of a API
-        string apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Kathmandu&appid=aafba97f9cdd6225a97072d8297ea264";
-
-        try
+        public string Name { get; set; }
+        public string Developer { get; set; }
+        public string Date { get; set; }
+        public BugAttribute() { }
+        public BugAttribute(string n, string dev)
         {
-            // Perform an asynchronous HTTP GET request
-            string result = await FetchDataAsync(apiUrl);
-
-            Console.WriteLine($"Data from API: {result}");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine($"An error occurred: {ex.Message}");
+            Name = n;
+            Developer = dev;
         }
     }
-
-    static async Task<string> FetchDataAsync(string apiUrl)
+    [Bug("Syntax Error", "Alex", Date = "2020-03-5")]
+    [Bug("For Loop Bug", "John", Date = "2020-03-6")]
+    public class Program
     {
-        using (HttpClient httpClient = new HttpClient())
+        public static void Main(string[] args)
         {
-            // Send an asynchronous GET request
-            HttpResponseMessage response = await httpClient.GetAsync(apiUrl);
+            var attr = Attribute.GetBugAttributes(typeof(Program));
+            foreach (var a in attr)
+            {
+                Console.WriteLine(a);
+            }
+            BugAttribute attribute = (BugAttribute)Attribute.GetBugAttribute(
+            typeof(Program).GetMethod("Main"),
+            typeof(BugAttribute));
 
-            // Check if the request was successful
-            response.EnsureSuccessStatusCode();
-
-            // Read and return the content as a string
-            return await response.Content.ReadAsStringAsync();
+            if (attribute != null)
+            {
+                Console.WriteLine($"Description: {attribute.Description}");
+            }
         }
     }
 }

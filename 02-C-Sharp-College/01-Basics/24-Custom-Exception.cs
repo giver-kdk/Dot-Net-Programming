@@ -19,7 +19,7 @@ namespace CustomExceptionApp
 				}
 				else
 				{
-					Console.WriteLine("Valied Age is: " + age);
+					Console.WriteLine("Valid Age is: " + age);
 				}
 			}
 			catch (InvalidAge exp)

@@ -5,8 +5,6 @@ using System;
 
 namespace FuncDelegate
 {
-	// Action Delegate is used to create delegate doesn't return anything
-	// Predicate Delegate is used to create delegate that takes one parameter and returns boolean
 	public class Program
 	{
 		public static int add(int a, int b)
@@ -18,13 +16,15 @@ namespace FuncDelegate
 			char[] chars = str.ToCharArray();       // String to Array
 			Array.Reverse(chars);                   // Reverse the Array
 			string rev = new string(chars);         // Array to String
-			return str == rev;                      // String Comaprison
+			return str == rev;                      // String Comparison
 		}
 		public static void Main(string[] args)
 		{
 			// Func Delegate is used to create delegate that returns something
 			Func<int, int, int> sum = add;
+			// Action Delegate is used to create delegate that doesn't return anything
 			Action<int, int> product = multiply;
+			// Predicate Delegate is used to create delegate that takes one parameter and returns boolean
 			Predicate<string> isPalindrome = checkPalindrome;
 
 			int result = sum(4, 5);

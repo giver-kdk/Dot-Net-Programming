@@ -24,6 +24,7 @@ namespace Properties
 				else _Radius = 0;
 			}
 		}
+		// Class inside class to access the private variable
 		public class Program
 		{
 			public static void Main(string[] args)
